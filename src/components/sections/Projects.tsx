@@ -8,7 +8,8 @@ import { portfolioData } from "@/data/portfoliodata";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -20,17 +21,20 @@ export function Projects() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".project-card", {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-        },
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power2.out",
-      });
+      gsap.fromTo(".project-card", 
+        { y: 50, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 90%", // Trigger earlier
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power2.out",
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();
@@ -46,7 +50,7 @@ export function Projects() {
             <Card key={project.id} className="project-card overflow-hidden hover:shadow-xl transition-all duration-300 group">
               <div className="relative h-48 w-full bg-muted overflow-hidden">
                 {/* Fallback pattern since real images might not exist yet */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-purple-500/10 flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-500">
+                <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-purple-500/10 flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-500">
                   🚀
                 </div>
               </div>
@@ -73,21 +77,28 @@ export function Projects() {
                 </div>
               </CardContent>
               
-              <CardFooter className="flex gap-2">
-                {project.githubUrl && (
-                  <Button variant="outline" size="sm" className="w-full" asChild>
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" /> Code
-                    </a>
-                  </Button>
-                )}
-                {project.liveUrl && (
-                  <Button size="sm" className="w-full" asChild>
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" /> Live
-                    </a>
-                  </Button>
-                )}
+              <CardFooter className="flex flex-col sm:flex-row gap-3">
+                <div className="flex gap-2 w-full">
+                  {project.githubUrl && (
+                    <Button variant="outline" size="sm" className="flex-1" asChild>
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="mr-2 h-4 w-4" /> Code
+                      </a>
+                    </Button>
+                  )}
+                  {project.liveUrl && (
+                    <Button size="sm" className="flex-1" asChild>
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 h-4 w-4" /> Live
+                      </a>
+                    </Button>
+                  )}
+                </div>
+                <Button variant="secondary" size="sm" className="w-full sm:w-auto" asChild>
+                  <Link href={`/projects/${project.id}`}>
+                    Details <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </CardFooter>
             </Card>
           ))}

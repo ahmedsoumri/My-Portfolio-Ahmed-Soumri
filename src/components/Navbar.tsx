@@ -45,7 +45,7 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div 
-          className="text-xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent cursor-pointer"
+          className="text-xl font-bold bg-linear-to-r from-primary to-purple-600 bg-clip-text text-transparent cursor-pointer"
           onClick={() => scrollToSection("home")}
         >
           Portfolio.

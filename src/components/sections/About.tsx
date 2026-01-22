@@ -17,17 +17,20 @@ export function About() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".about-item", {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-        },
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power2.out",
-      });
+      gsap.fromTo(".about-item", 
+        { y: 50, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 90%",
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power2.out",
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();

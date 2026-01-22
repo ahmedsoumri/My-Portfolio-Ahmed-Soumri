@@ -36,6 +36,8 @@ export interface PortfolioData {
     email: string;
     github: string;
     linkedin: string;
+    twitter: string;
+    threads: string;
   };
   hero: {
     greeting: Translation;
@@ -55,7 +57,7 @@ export interface PortfolioData {
 
 export const portfolioData: PortfolioData = {
   personalInfo: {
-    name: "Your Name",
+    name: "Ahmed Soumri",
     title: {
       en: "Full Stack Developer",
       fr: "Développeur Full Stack",
@@ -64,11 +66,13 @@ export const portfolioData: PortfolioData = {
     description: {
       en: "Passionate developer crafting beautiful digital experiences. I specialize in building modern web applications with cutting-edge technologies.",
       fr: "Développeur passionné créant de belles expériences numériques. Je me spécialise dans la création d'applications web modernes avec des technologies de pointe.",
-      ar: "مطور شغوف بإنشاء تجارب رقمية جميلة. أتخصص في بناء تطبيقات ويب حديثة باستخدام أحدث التقنيات."
+      ar: "مطور شغوف بإنشاء تجارب رقمية جميلة. أخصصت في بناء تطبيقات ويب حديثة باستخدام أحدث التقنيات."
     },
-    email: "your.email@example.com",
-    github: "https://github.com/yourusername",
-    linkedin: "https://linkedin.com/in/yourusername"
+    email: "ahmedsoumri01@gmail.com",
+    github: "https://github.com/ahmedsoumri01",
+    linkedin: "https://linkedin.com/in/ahmed-soumri",
+    twitter: "https://x.com/yourusername",
+    threads: "https://threads.net/@yourusername"
   },
   hero: {
     greeting: {

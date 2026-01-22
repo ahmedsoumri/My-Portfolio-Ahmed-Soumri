@@ -88,8 +88,8 @@ export function Hero() {
         {/* Hero Image/Visual */}
         <div className="hero-text relative hidden md:block">
           <div className="relative w-full aspect-square max-w-md mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary to-purple-600 rounded-2xl rotate-6 opacity-20 blur-xl" />
-            <div className="absolute inset-0 bg-gradient-to-bl from-blue-500 to-cyan-400 rounded-2xl -rotate-6 opacity-20 blur-xl" />
+            <div className="absolute inset-0 bg-linear-to-tr from-primary to-purple-600 rounded-2xl rotate-6 opacity-20 blur-xl" />
+            <div className="absolute inset-0 bg-linear-to-bl from-blue-500 to-cyan-400 rounded-2xl -rotate-6 opacity-20 blur-xl" />
             <div className="relative h-full w-full bg-card rounded-2xl border shadow-2xl overflow-hidden flex items-center justify-center p-8">
               <div className="text-9xl">👨‍💻</div>
             </div>
