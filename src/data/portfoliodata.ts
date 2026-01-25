@@ -28,7 +28,21 @@ export interface Experience {
   technologies: string[];
 }
 
+export interface SEOMetadata {
+  siteUrl: string;
+  siteName: string;
+  title: string;
+  description: string;
+  keywords: string[];
+  author: string;
+  twitterHandle: string;
+  ogImage: string;
+  locale: string;
+  themeColor: string;
+}
+
 export interface PortfolioData {
+  seo: SEOMetadata;
   personalInfo: {
     name: string;
     title: Translation;
@@ -56,17 +70,53 @@ export interface PortfolioData {
 }
 
 export const portfolioData: PortfolioData = {
+  // ==========================================
+  // SEO METADATA - Edit for search optimization
+  // ==========================================
+  seo: {
+    siteUrl: "https://ahmedsoumri.com", // Your deployed domain
+    siteName: "Ahmed Soumri | Full Stack Developer & Blockchain Enthusiast",
+    title: "Ahmed Soumri - Full Stack Developer | React, Node.js & Blockchain",
+    description: "Ahmed Soumri is a passionate Full Stack Developer specializing in React, Next.js, Node.js, and blockchain technologies. Building innovative web applications and exploring Web3, smart contracts, and decentralized solutions. Available for freelance projects and full-time opportunities.",
+    keywords: [
+      "Ahmed Soumri",
+      "Full Stack Developer",
+      "Blockchain Developer",
+      "React Developer",
+      "Next.js Developer",
+      "Node.js Developer",
+      "Web3 Developer",
+      "Smart Contracts",
+      "TypeScript",
+      "JavaScript",
+      "Frontend Developer",
+      "Backend Developer",
+      "Software Engineer",
+      "Tunisia Developer",
+      "Freelance Developer",
+      "Portfolio",
+      "Web Developer",
+      "DeFi",
+      "Solidity",
+      "Ethereum"
+    ],
+    author: "Ahmed Soumri",
+    twitterHandle: "@ahmedsoumri",
+    ogImage: "/og-image.png", // Create a 1200x630 image for social sharing
+    locale: "en_US",
+    themeColor: "#8B5CF6"
+  },
   personalInfo: {
     name: "Ahmed Soumri",
     title: {
-      en: "Full Stack Developer",
-      fr: "Développeur Full Stack",
-      ar: "مطور ويب متكامل"
+      en: "Full Stack Developer & Blockchain Enthusiast",
+      fr: "Développeur Full Stack & Passionné Blockchain",
+      ar: "مطور ويب متكامل ومتحمس للبلوكتشين"
     },
     description: {
-      en: "Passionate developer crafting beautiful digital experiences. I specialize in building modern web applications with cutting-edge technologies.",
-      fr: "Développeur passionné créant de belles expériences numériques. Je me spécialise dans la création d'applications web modernes avec des technologies de pointe.",
-      ar: "مطور شغوف بإنشاء تجارب رقمية جميلة. أخصصت في بناء تطبيقات ويب حديثة باستخدام أحدث التقنيات."
+      en: "Passionate Full Stack Developer eager to dive into blockchain technology. I specialize in building modern web applications with React, Next.js, and Node.js while exploring Web3 and decentralized solutions.",
+      fr: "Développeur Full Stack passionné désireux de plonger dans la technologie blockchain. Je me spécialise dans la création d'applications web modernes avec React, Next.js et Node.js tout en explorant Web3 et les solutions décentralisées.",
+      ar: "مطور ويب متكامل شغوف ومتحمس للغوص في تقنية البلوكتشين. أتخصص في بناء تطبيقات ويب حديثة باستخدام React و Next.js و Node.js مع استكشاف Web3 والحلول اللامركزية."
     },
     email: "ahmedsoumri01@gmail.com",
     github: "https://github.com/ahmedsoumri",
