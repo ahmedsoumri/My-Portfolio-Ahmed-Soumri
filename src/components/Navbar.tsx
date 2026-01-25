@@ -57,7 +57,7 @@ export function Navbar() {
             <button
               key={index}
               onClick={() => scrollToSection(sectionIds[index])}
-              className="text-sm font-medium hover:text-primary transition-colors relative group"
+              className="text-sm font-medium cursor-pointer hover:text-primary transition-colors relative group"
             >
               {item}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />

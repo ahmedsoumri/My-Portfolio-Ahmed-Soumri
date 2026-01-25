@@ -69,10 +69,10 @@ export const portfolioData: PortfolioData = {
       ar: "مطور شغوف بإنشاء تجارب رقمية جميلة. أخصصت في بناء تطبيقات ويب حديثة باستخدام أحدث التقنيات."
     },
     email: "ahmedsoumri01@gmail.com",
-    github: "https://github.com/ahmedsoumri01",
+    github: "https://github.com/ahmedsoumri",
     linkedin: "https://linkedin.com/in/ahmed-soumri",
-    twitter: "https://x.com/yourusername",
-    threads: "https://threads.net/@yourusername"
+    twitter: "https://x.com/ahmedsoumri",
+    threads: "https://threads.net/@ahmedsoumri"
   },
   hero: {
     greeting: {
@@ -183,7 +183,7 @@ export const portfolioData: PortfolioData = {
       },
       image: "/projects/ecommerce.jpg",
       technologies: ["Next.js", "Stripe", "Prisma", "PostgreSQL"],
-      githubUrl: "https://github.com/yourusername/ecommerce",
+      githubUrl: "https://github.com/ahmedsoumri/ecommerce",
       liveUrl: "https://ecommerce-demo.com"
     },
     {
@@ -200,7 +200,7 @@ export const portfolioData: PortfolioData = {
       },
       image: "/projects/taskmanager.jpg",
       technologies: ["React", "Socket.io", "Node.js", "MongoDB"],
-      githubUrl: "https://github.com/yourusername/taskmanager"
+      githubUrl: "https://github.com/ahmedsoumri/taskmanager"
     },
     {
       id: 3,
@@ -216,7 +216,7 @@ export const portfolioData: PortfolioData = {
       },
       image: "/projects/aichat.jpg",
       technologies: ["Python", "OpenAI", "FastAPI", "React"],
-      githubUrl: "https://github.com/yourusername/aichat",
+      githubUrl: "https://github.com/ahmedsoumri/aichat",
       liveUrl: "https://aichat-demo.com"
     },
     {
@@ -233,7 +233,7 @@ export const portfolioData: PortfolioData = {
       },
       image: "/projects/portfolio.jpg",
       technologies: ["Next.js", "GSAP", "Tailwind CSS", "TypeScript"],
-      githubUrl: "https://github.com/yourusername/portfolio"
+      githubUrl: "https://github.com/ahmedsoumri/portfolio"
     }
   ]
 };

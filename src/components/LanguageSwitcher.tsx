@@ -19,7 +19,7 @@ export function LanguageSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="relative">
+        <Button variant="ghost" size="icon" className="relative cursor-pointer">
           <Globe className="h-5 w-5" />
           <span className="sr-only">Switch language</span>
         </Button>
@@ -29,7 +29,7 @@ export function LanguageSwitcher() {
           <DropdownMenuItem
             key={lang}
             onClick={() => setLanguage(lang)}
-            className={language === lang ? "bg-accent" : ""}
+            className={language === lang ? "bg-accent cursor-pointer" : "cursor-pointer"}
           >
             <span className="mr-2">{languageLabels[lang].flag}</span>
             {languageLabels[lang].label}
