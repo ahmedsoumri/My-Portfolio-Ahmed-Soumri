@@ -1,7 +1,7 @@
 import type { SEOMetadata, Translation } from "./types";
 
 export const seo: SEOMetadata = {
-  siteUrl: "https://ahmedsoumri.com",
+  siteUrl: "https://www.ahmedsoumri.com",
   siteName: "Ahmed Soumri | Full Stack Developer",
   title: "Ahmed Soumri - Full Stack Developer | SaaS, Web, Mobile & Web3",
   description:
