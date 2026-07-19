@@ -11,26 +11,25 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en');
-  const [isRTL, setIsRTL] = useState(false);
+function getInitialLanguage(): Language {
+  if (typeof window === 'undefined') {
+    return 'en';
+  }
 
-  useEffect(() => {
-    // Check localStorage for saved language preference
-    const savedLanguage = localStorage.getItem('portfolio-language') as Language;
-    if (savedLanguage && ['en', 'fr', 'ar'].includes(savedLanguage)) {
-      setLanguage(savedLanguage);
-    }
-  }, []);
+  const savedLanguage = localStorage.getItem('portfolio-language') as Language | null;
+  return savedLanguage && ['en', 'fr', 'ar'].includes(savedLanguage) ? savedLanguage : 'en';
+}
+
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  const [language, setLanguage] = useState<Language>(getInitialLanguage);
+  const isRTL = language === 'ar';
 
   useEffect(() => {
     // Update RTL state and document direction
-    const rtl = language === 'ar';
-    setIsRTL(rtl);
-    document.documentElement.dir = rtl ? 'rtl' : 'ltr';
+    document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
     document.documentElement.lang = language;
     localStorage.setItem('portfolio-language', language);
-  }, [language]);
+  }, [isRTL, language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, isRTL }}>

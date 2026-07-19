@@ -15,6 +15,7 @@ export function Experience() {
   const { language } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
   const { sections, experiences } = portfolioData;
+  const visibleExperiences = experiences.filter((experience) => !experience.hidden);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -43,7 +44,7 @@ export function Experience() {
         <h2 className="text-3xl font-bold text-center mb-12">{sections.experience[language]}</h2>
         
         <div className="max-w-4xl mx-auto space-y-8">
-          {experiences.map((exp) => (
+          {visibleExperiences.map((exp) => (
             <div key={exp.id} className="experience-card relative pl-8 border-l-2 border-primary/20 last:border-0">
               <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary ring-4 ring-background" />
               
@@ -60,6 +61,14 @@ export function Experience() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">{exp.description[language]}</p>
+                  <ul className="space-y-2 mb-4 text-sm text-muted-foreground">
+                    {exp.highlights.map((highlight) => (
+                      <li key={highlight.en} className="flex gap-2">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                        <span>{highlight[language]}</span>
+                      </li>
+                    ))}
+                  </ul>
                   <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech) => (
                       <Badge key={tech} variant="outline" className="text-xs">

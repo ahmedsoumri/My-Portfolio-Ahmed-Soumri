@@ -4,22 +4,56 @@ import React, { useState, useEffect } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useTranslation } from "@/context/LanguageContext";
-import { navigationItems } from "@/data/portfoliodata";
+import { navigationItems, portfolioData } from "@/data/portfoliodata";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 
+const SECTION_IDS = ["home", "about", "experience", "projects", "contact"];
+
 export function Navbar() {
-  const { t, language } = useTranslation();
+  const { language } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navLinks = navigationItems[language];
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const scrollY = window.scrollY;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      setIsScrolled(scrollY > 50);
+      setScrollProgress(maxScroll > 0 ? Math.min((scrollY / maxScroll) * 100, 100) : 0);
     };
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = SECTION_IDS
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => Boolean(section));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleSection?.target.id) {
+          setActiveSection(visibleSection.target.id);
+        }
+      },
+      {
+        rootMargin: "-35% 0px -55% 0px",
+        threshold: [0.1, 0.25, 0.5],
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -30,37 +64,43 @@ export function Navbar() {
     }
   };
 
-  const navLinks = navigationItems[language];
-  // Map English keys to translated labels for IDs
-  const sectionIds = ["home", "about", "experience", "projects", "contact"];
-
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-background/80 backdrop-blur-md border-b shadow-sm py-2"
+          ? "bg-background/85 backdrop-blur-xl border-b shadow-sm py-2"
           : "bg-transparent py-4"
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <div 
-          className="text-xl font-bold bg-linear-to-r from-primary to-purple-600 bg-clip-text text-transparent cursor-pointer"
+        <button
+          type="button"
+          className="group text-xl font-bold bg-linear-to-r from-primary via-cyan-500 to-purple-600 bg-clip-text text-transparent cursor-pointer transition-transform duration-300 hover:scale-[1.03]"
           onClick={() => scrollToSection("home")}
+          aria-label="Go to home section"
         >
-          Portfolio.
-        </div>
+          {portfolioData.profile.brand}
+        </button>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6 rtl:space-x-reverse">
           {navLinks.map((item, index) => (
             <button
               key={index}
-              onClick={() => scrollToSection(sectionIds[index])}
-              className="text-sm font-medium cursor-pointer hover:text-primary transition-colors relative group"
+              onClick={() => scrollToSection(SECTION_IDS[index])}
+              className={cn(
+                "text-sm font-medium cursor-pointer transition-colors relative group",
+                activeSection === SECTION_IDS[index] ? "text-primary" : "hover:text-primary"
+              )}
+              aria-current={activeSection === SECTION_IDS[index] ? "page" : undefined}
             >
               {item}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+              <span
+                className={cn(
+                  "absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300",
+                  activeSection === SECTION_IDS[index] ? "w-full" : "w-0 group-hover:w-full"
+                )}
+              />
             </button>
           ))}
         </nav>
@@ -90,14 +130,22 @@ export function Navbar() {
           {navLinks.map((item, index) => (
             <button
               key={index}
-              onClick={() => scrollToSection(sectionIds[index])}
-              className="text-left py-2 px-4 hover:bg-accent rounded-md transition-colors"
+              onClick={() => scrollToSection(SECTION_IDS[index])}
+              className={cn(
+                "text-left py-2 px-4 rounded-md transition-colors",
+                activeSection === SECTION_IDS[index] ? "bg-accent text-accent-foreground" : "hover:bg-accent"
+              )}
             >
               {item}
             </button>
           ))}
         </div>
       )}
+      <div
+        className="absolute bottom-0 left-0 h-0.5 bg-linear-to-r from-primary via-cyan-500 to-purple-600 transition-[width] duration-150"
+        style={{ width: `${scrollProgress}%` }}
+        aria-hidden="true"
+      />
     </header>
   );
 }

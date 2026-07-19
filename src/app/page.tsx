@@ -4,6 +4,7 @@ import { Experience } from "@/components/sections/Experience";
 import { Projects } from "@/components/sections/Projects";
 import { ContactForm } from "@/components/ContactForm";
 import { SocialIcons } from "@/components/SocialIcons";
+import { ContactSocialTitle } from "@/components/ContactSocialTitle";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
           </div>
           
           <div className="text-center space-y-4">
-            <h3 className="text-xl font-semibold mb-4">Connect on Socials</h3>
+            <ContactSocialTitle />
             <SocialIcons />
           </div>
         </div>

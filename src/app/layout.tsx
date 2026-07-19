@@ -4,15 +4,16 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { ScrollToTopButton } from "@/components/ScrollToTopButton";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { portfolioData } from "@/data/portfoliodata";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const { seo } = portfolioData;
+const { seo, profile } = portfolioData;
 
 export const metadata: Metadata = {
-  // Basic Meta Tags
   title: {
     default: seo.title,
     template: `%s | ${seo.siteName}`,
@@ -22,8 +23,6 @@ export const metadata: Metadata = {
   authors: [{ name: seo.author, url: seo.siteUrl }],
   creator: seo.author,
   publisher: seo.author,
-  
-  // Canonical URL
   metadataBase: new URL(seo.siteUrl),
   alternates: {
     canonical: "/",
@@ -33,8 +32,6 @@ export const metadata: Metadata = {
       "ar-SA": "/",
     },
   },
-  
-  // Open Graph (Facebook, LinkedIn, etc.)
   openGraph: {
     type: "website",
     locale: seo.locale,
@@ -51,8 +48,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  
-  // Twitter Card
   twitter: {
     card: "summary_large_image",
     title: seo.title,
@@ -61,8 +56,6 @@ export const metadata: Metadata = {
     creator: seo.twitterHandle,
     site: seo.twitterHandle,
   },
-  
-  // Robots
   robots: {
     index: true,
     follow: true,
@@ -74,54 +67,40 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  
-  // Verification (add your verification codes here)
-  verification: {
-    // google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-  },
-  
-  // Icons
   icons: {
     icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
   },
-  
-  // Manifest
   manifest: "/site.webmanifest",
-  
-  // Theme color
   other: {
     "theme-color": seo.themeColor,
     "msapplication-TileColor": seo.themeColor,
   },
 };
 
-// JSON-LD Structured Data for rich search results
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: portfolioData.personalInfo.name,
+  name: profile.name,
   url: seo.siteUrl,
   image: seo.ogImage,
   jobTitle: "Full Stack Developer",
   description: seo.description,
-  email: `mailto:${portfolioData.personalInfo.email}`,
+  email: `mailto:${profile.email}`,
   sameAs: [
-    portfolioData.personalInfo.github,
-    portfolioData.personalInfo.linkedin,
-    portfolioData.personalInfo.twitter,
-    portfolioData.personalInfo.threads,
-  ],
+    profile.links.github,
+    profile.links.linkedin,
+    profile.links.twitter,
+    profile.links.threads,
+  ].filter(Boolean),
   knowsAbout: [
     "Full Stack Development",
+    "SaaS",
     "React",
     "Next.js",
     "Node.js",
+    "React Native",
     "TypeScript",
-    "Blockchain",
-    "Web3",
+    "Web3 Integration",
     "Smart Contracts",
     "Solidity",
   ],
@@ -135,7 +114,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -152,13 +130,8 @@ export default function RootLayout({
             <div className="relative flex min-h-screen flex-col">
               <Navbar />
               <main className="flex-1">{children}</main>
-              <footer className="py-6 md:px-8 md:py-0">
-                <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-                  <p className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
-                   © {new Date().getFullYear()} {portfolioData.personalInfo.name} - Full Stack Developer & Blockchain Enthusiast. All rights reserved.
-                  </p>
-                </div>
-              </footer>
+              <Footer />
+              <ScrollToTopButton />
             </div>
           </LanguageProvider>
         </ThemeProvider>

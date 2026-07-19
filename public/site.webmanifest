@@ -1,0 +1,9 @@
+{
+  "name": "Ahmed Soumri Portfolio",
+  "short_name": "Ahmed Soumri",
+  "description": "Full Stack Developer portfolio for SaaS, web, mobile, and Web3-enabled solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6D5EF7"
+}

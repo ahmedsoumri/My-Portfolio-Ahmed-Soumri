@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { useTranslation } from "@/context/LanguageContext";
 import { portfolioData } from "@/data/portfoliodata";
@@ -11,44 +11,44 @@ import Image from "next/image";
 import { InteractiveBackground } from "../InteractiveBackground";
 
 export function Hero() {
-  const { t, language } = useTranslation();
+  const { language } = useTranslation();
   const heroRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const btn1Ref = useRef<HTMLButtonElement>(null);
   const btn2Ref = useRef<HTMLButtonElement>(null);
-  const { hero, personalInfo } = portfolioData;
+  const { hero, profile } = portfolioData;
+  const cvHref = language === "fr" && profile.cv.fr ? profile.cv.fr : profile.cv.en;
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
 
       tl.from(".hero-text", {
-        y: 60,
-        opacity: 0,
-        duration: 1.2,
-        stagger: 0.15,
+        y: 32,
+        duration: 0.45,
+        stagger: 0.06,
         ease: "power4.out",
       })
       .from(".hero-btn", {
-        y: 30,
+        y: 18,
         opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
+        duration: 0.45,
+        stagger: 0.06,
         ease: "back.out(1.7)",
-      }, "-=0.6")
+      }, "-=0.25")
       .from(".hero-image", {
         scale: 0.8,
         opacity: 0,
-        duration: 1.2,
+        duration: 0.65,
         ease: "elastic.out(1, 0.5)",
-      }, "-=1")
+      }, "-=0.45")
       .from(".hero-bg-glow", {
         scale: 0.5,
         opacity: 0,
-        duration: 2,
+        duration: 0.9,
         stagger: 0.2,
         ease: "power2.out",
-      }, "-=1.5");
+      }, "-=0.65");
     }, heroRef);
 
     return () => ctx.revert();
@@ -122,11 +122,11 @@ export function Hero() {
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div ref={textRef} className="space-y-6 text-center md:text-start">
             <p className="hero-text text-primary font-semibold text-lg tracking-wider uppercase">
-              {hero.greeting[language]} <span className="gradient-text">{personalInfo.name}</span>
+              {hero.greeting[language]} <span className="gradient-text">{profile.name}</span>
             </p>
             
             <h1 className="hero-text text-5xl md:text-7xl font-bold tracking-tight leading-tight">
-              <span className="gradient-text">{hero.welcomeMessage[language]}</span>
+              <span className="gradient-text">{hero.headline[language]}</span>
             </h1>
             
             <p className="hero-text text-xl md:text-2xl text-muted-foreground max-w-lg mx-auto md:mx-0 leading-relaxed">
@@ -141,7 +141,7 @@ export function Hero() {
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <span className="relative z-10 flex items-center">
-                  {hero.cta[language]}
+                  {hero.primaryCta[language]}
                   {isRTL ? (
                     <ArrowRight className="mr-2 h-4 w-4 rotate-180 group-hover:-translate-x-1 transition-transform" />
                   ) : (
@@ -154,9 +154,12 @@ export function Hero() {
                 size="lg" 
                 variant="outline"
                 className="magnetic-btn group border-2 border-purple-500/50 hover:border-purple-400 hover:bg-purple-500/10 backdrop-blur-sm"
+                asChild
               >
-                Download CV
-                <Download className={`${isRTL ? "mr-2" : "ml-2"} h-4 w-4 group-hover:animate-bounce`} />
+                <a href={cvHref} download>
+                  {hero.secondaryCta[language]}
+                  <Download className={`${isRTL ? "mr-2" : "ml-2"} h-4 w-4 group-hover:animate-bounce`} />
+                </a>
               </Button>
             </div>
           </div>

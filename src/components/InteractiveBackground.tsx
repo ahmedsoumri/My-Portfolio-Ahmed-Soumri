@@ -39,9 +39,9 @@ export function InteractiveBackground() {
   const initParticles = useCallback((width: number, height: number) => {
     const particles: Particle[] = [];
     const colorKeys = Object.values(COLORS);
+    const particleCount = width < 768 ? 38 : 72;
     
-    // Create more particles for better interaction
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < particleCount; i++) {
       const x = Math.random() * width;
       const y = Math.random() * height;
       particles.push({
@@ -81,10 +81,19 @@ export function InteractiveBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducedMotion) {
+      return;
+    }
+
     const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      initParticles(canvas.width, canvas.height);
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = window.innerWidth * pixelRatio;
+      canvas.height = window.innerHeight * pixelRatio;
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+      ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+      initParticles(window.innerWidth, window.innerHeight);
     };
 
     // Global mouse tracking on window level
@@ -115,7 +124,7 @@ export function InteractiveBackground() {
 
     handleResize();
     window.addEventListener("resize", handleResize);
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     window.addEventListener("mouseleave", handleMouseLeave);
     window.addEventListener("click", handleClick);
 
