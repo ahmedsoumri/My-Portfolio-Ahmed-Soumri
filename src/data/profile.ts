@@ -21,7 +21,7 @@ export const profile = {
     fr: "/cv/Ahmed_Soumri_CV_FR.docx",
   },
   links: {
-    portfolio: "https://ahmedsoumri.com",
+    portfolio: "https://www.ahmedsoumri.com",
     github: "https://github.com/ahmedsoumri",
     linkedin: "https://linkedin.com/in/ahmed-soumri",
     twitter: "https://x.com/ahmedsoumri",

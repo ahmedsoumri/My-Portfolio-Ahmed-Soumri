@@ -6,7 +6,7 @@ Professional portfolio website for Ahmed Soumri, focused on Full Stack developme
 
 ## Overview
 
-This repository contains the source code for [ahmedsoumri.com](https://ahmedsoumri.com), a multilingual personal brand website built to present professional experience, technical skills, selected projects, CV access, and contact paths.
+This repository contains the source code for [www.ahmedsoumri.com](https://www.ahmedsoumri.com), a multilingual personal brand website built to present professional experience, technical skills, selected projects, CV access, and contact paths.
 
 The portfolio is designed as a static-first website with centralized content files. This keeps the project easy to maintain without requiring a backend or CMS.
 
@@ -236,7 +236,7 @@ The portfolio includes a strong technical SEO foundation:
 After deployment, submit this sitemap in Google Search Console:
 
 ```text
-https://ahmedsoumri.com/sitemap.xml
+https://www.ahmedsoumri.com/sitemap.xml
 ```
 
 ## Deployment
@@ -245,7 +245,7 @@ The project can be deployed on any platform that supports Next.js, such as Verce
 
 Recommended deployment checklist:
 
-- Confirm the production domain is `https://ahmedsoumri.com`
+- Confirm the production domain is `https://www.ahmedsoumri.com`
 - Run `npm run build`
 - Verify `/robots.txt`
 - Verify `/sitemap.xml`
@@ -270,7 +270,7 @@ This portfolio is part of a broader professional brand strategy. It is built to 
 
 Ahmed Soumri
 
-- Website: [ahmedsoumri.com](https://ahmedsoumri.com)
+- Website: [www.ahmedsoumri.com](https://www.ahmedsoumri.com)
 - GitHub: [github.com/ahmedsoumri](https://github.com/ahmedsoumri)
 - LinkedIn: [linkedin.com/in/ahmed-soumri](https://linkedin.com/in/ahmed-soumri)
 - Email: [ahmedsoumri01@gmail.com](mailto:ahmedsoumri01@gmail.com)
