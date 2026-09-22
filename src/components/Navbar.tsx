@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 
-const SECTION_IDS = ["home", "about", "experience", "projects", "contact"];
+const SECTION_IDS = ["home", "about", "experience", "certifications", "projects", "contact"];
 
 export function Navbar() {
   const { language } = useTranslation();

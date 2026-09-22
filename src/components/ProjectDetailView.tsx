@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useTranslation } from "@/context/LanguageContext";
 import { portfolioData, Project } from "@/data/portfoliodata";
+import { IphoneFrame } from "@/components/IphoneFrame";
 
 export function ProjectDetailView({ project }: { project: Project }) {
   const { language } = useTranslation();
@@ -14,6 +15,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
   const screenshots = project.screenshots ?? [];
   const videos = project.videos ?? [];
   const hasMedia = screenshots.length > 0 || videos.length > 0;
+  const isMobileProject = project.projectType === "mobile";
   const publishedLabel = {
     en: "Published",
     fr: "Publie",
@@ -29,17 +31,27 @@ export function ProjectDetailView({ project }: { project: Project }) {
 
       <div className="grid md:grid-cols-2 gap-12">
         <div className="space-y-6">
-          <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-muted shadow-lg">
+          <div className={`relative w-full overflow-hidden rounded-2xl bg-muted shadow-lg ${isMobileProject ? "min-h-[560px] py-8" : "aspect-video"}`}>
             {project.coverImage ? (
               <>
-                <Image
-                  src={project.coverImage.src}
-                  alt={project.coverImage.alt[language]}
-                  fill
-                  priority
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-contain"
-                />
+                {isMobileProject ? (
+                  <IphoneFrame
+                    src={project.coverImage.src}
+                    alt={project.coverImage.alt}
+                    language={language}
+                    priority
+                    className="max-w-[240px]"
+                  />
+                ) : (
+                  <Image
+                    src={project.coverImage.src}
+                    alt={project.coverImage.alt[language]}
+                    fill
+                    priority
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-contain"
+                  />
+                )}
                 <div className="absolute left-4 top-4 rounded-md bg-black/65 px-3 py-1 text-xs font-medium uppercase tracking-wide text-white backdrop-blur">
                   {statusLabel}
                 </div>
@@ -119,20 +131,33 @@ export function ProjectDetailView({ project }: { project: Project }) {
           {screenshots.length > 0 && (
             <section className="space-y-6">
               <h2 className="text-2xl font-bold">{labels.screenshots[language]}</h2>
-              <div className="grid gap-6 md:grid-cols-2">
+              <div className={`grid gap-x-8 gap-y-12 ${isMobileProject ? "sm:grid-cols-2 lg:grid-cols-3" : "gap-6 md:grid-cols-2"}`}>
                 {screenshots.map((screenshot) => (
                   <figure
                     key={screenshot.src}
-                    className="overflow-hidden rounded-xl border bg-card shadow-sm"
+                    className={
+                      isMobileProject
+                        ? "overflow-visible"
+                        : "overflow-hidden rounded-xl border bg-card shadow-sm"
+                    }
                   >
-                    <div className="relative aspect-video w-full bg-muted/40">
-                      <Image
-                        src={screenshot.src}
-                        alt={screenshot.alt[language]}
-                        fill
-                        sizes="(min-width: 768px) 50vw, 100vw"
-                        className="object-contain"
-                      />
+                    <div className={`relative w-full ${isMobileProject ? "py-4" : "aspect-video bg-muted/40"}`}>
+                      {isMobileProject ? (
+                        <IphoneFrame
+                          src={screenshot.src}
+                          alt={screenshot.alt}
+                          language={language}
+                          className="max-w-[220px]"
+                        />
+                      ) : (
+                        <Image
+                          src={screenshot.src}
+                          alt={screenshot.alt[language]}
+                          fill
+                          sizes="(min-width: 768px) 50vw, 100vw"
+                          className="object-contain"
+                        />
+                      )}
                     </div>
                     {screenshot.caption && (
                       <figcaption className="px-4 py-3 text-sm text-muted-foreground">

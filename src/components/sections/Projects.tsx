@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { IphoneFrame } from "@/components/IphoneFrame";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,14 +59,27 @@ export function Projects() {
               <div className="relative h-48 w-full bg-muted overflow-hidden">
                 {project.coverImage ? (
                   <>
-                    <Image
-                      src={project.coverImage.src}
-                      alt={project.coverImage.alt[language]}
-                      fill
-                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+                    {project.projectType === "mobile" ? (
+                      <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-zinc-950 via-slate-900 to-primary/40 py-3 transition-transform duration-500 group-hover:scale-105">
+                        <IphoneFrame
+                          src={project.coverImage.src}
+                          alt={project.coverImage.alt}
+                          language={language}
+                          className="max-w-[78px] border-[4px] rounded-[1rem] p-0.5 shadow-xl"
+                        />
+                      </div>
+                    ) : (
+                      <>
+                        <Image
+                          src={project.coverImage.src}
+                          alt={project.coverImage.alt[language]}
+                          fill
+                          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+                      </>
+                    )}
                     <div className="absolute left-4 top-4 rounded-md bg-black/65 px-3 py-1 text-xs font-medium uppercase tracking-wide text-white backdrop-blur">
                       {project.liveUrl ? publishedLabel[language] : project.status[language]}
                     </div>

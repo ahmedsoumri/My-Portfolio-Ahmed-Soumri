@@ -28,6 +28,15 @@ export interface Experience {
   technologies: string[];
 }
 
+export interface Certification {
+  id: number;
+  title: Translation;
+  issuer: string;
+  date: string;
+  category: "ai" | "web3" | "devops" | "data" | "systems" | "typescript";
+  pdfUrl?: string;
+}
+
 export interface ProjectScreenshot {
   src: string;
   alt: Translation;
@@ -45,6 +54,7 @@ export interface Project {
   id: number;
   slug: string;
   hidden?: boolean;
+  projectType?: "web" | "mobile";
   title: Translation;
   shortDescription: Translation;
   overview: Translation;

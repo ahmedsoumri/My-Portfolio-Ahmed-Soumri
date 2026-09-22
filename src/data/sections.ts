@@ -60,6 +60,7 @@ export const hero = {
 export const sectionTitles = {
   about: { en: "About Me", fr: "A propos", ar: "نبذة عني" } satisfies Translation,
   experience: { en: "Experience", fr: "Experience", ar: "الخبرات" } satisfies Translation,
+  certifications: { en: "Certifications", fr: "Certifications", ar: "الشهادات" } satisfies Translation,
   projects: { en: "Projects", fr: "Projets", ar: "المشاريع" } satisfies Translation,
   contact: { en: "Get in Touch", fr: "Contactez-moi", ar: "تواصل معي" } satisfies Translation,
 };

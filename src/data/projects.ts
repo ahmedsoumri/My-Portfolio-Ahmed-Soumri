@@ -7,52 +7,97 @@ export const projects: Project[] = [
   {
     id: 1,
     slug: "careercraft",
-    hidden: true,
     title: {
       en: "CareerCraft",
       fr: "CareerCraft",
       ar: "CareerCraft",
     },
     shortDescription: {
-      en: "AI-powered career platform MVP focused on CV improvement, career guidance and job-readiness tools.",
-      fr: "MVP de plateforme carriere avec IA pour ameliorer les CV, guider les utilisateurs et preparer les candidatures.",
-      ar: "منصة مهنية مدعومة بالذكاء الاصطناعي لتحسين السيرة الذاتية والتوجيه المهني والتحضير للفرص.",
+      en: "AI-powered career assistant that matches CVs with job offers, generates cover letters and runs simulated interviews.",
+      fr: "Assistant carriere avec IA qui compare les CV aux offres, genere des lettres de motivation et lance des entretiens simules.",
+      ar: "منصة مهنية بالذكاء الاصطناعي تطابق السيرة الذاتية مع عروض العمل وتولد رسائل تحفيزية وتحاكي مقابلات العمل.",
     },
     overview: {
-      en: "CareerCraft helps users improve their career materials and prepare for opportunities through AI-assisted guidance. The MVP is focused on practical flows: CV review, career direction and job-readiness support.",
-      fr: "CareerCraft aide les utilisateurs a ameliorer leurs supports de candidature et a se preparer aux opportunites grace a une assistance IA. Le MVP se concentre sur des parcours pratiques : revue de CV, orientation carriere et preparation.",
-      ar: "تساعد CareerCraft المستخدمين على تحسين ملفاتهم المهنية والاستعداد للفرص عبر إرشاد مدعوم بالذكاء الاصطناعي. يركز الـ MVP على تحسين السيرة الذاتية والتوجيه المهني والتحضير للعمل.",
+      en: "CareerCraft is a full-stack AI career assistant built around one job-search workflow: upload and review a CV, save job offers, analyze CV-to-offer fit, generate tailored cover letters, track applications on a Kanban board and practice contextual interview sessions.",
+      fr: "CareerCraft est un assistant carriere full-stack avec IA construit autour d'un workflow de recherche d'emploi : uploader et reviser un CV, enregistrer des offres, analyser l'adequation CV-offre, generer des lettres de motivation, suivre les candidatures en Kanban et pratiquer des entretiens contextuels.",
+      ar: "CareerCraft منصة Full Stack لمساعدة الباحثين عن العمل بالذكاء الاصطناعي: رفع ومراجعة السيرة الذاتية، حفظ عروض العمل، تحليل تطابق السيرة مع العرض، توليد رسالة تحفيزية، متابعة الطلبات عبر Kanban، والتدرب على مقابلات سياقية.",
     },
     visualLabel: "AI Career Platform",
-    status: { en: "MVP in progress", fr: "MVP en cours", ar: "MVP قيد التطوير" },
-    technologies: ["Next.js", "React", "Node.js", "TypeScript", "AI"],
+    status: { en: "MVP built", fr: "MVP realise", ar: "MVP منجز" },
+    technologies: ["Next.js", "React", "TypeScript", "FastAPI", "PostgreSQL", "Redis", "Tailwind CSS", "AI"],
     features: [
       {
-        en: "AI-assisted career and CV improvement flows.",
-        fr: "Parcours IA pour l'amelioration de carriere et de CV.",
-        ar: "مسارات مدعومة بالذكاء الاصطناعي لتحسين المسار المهني والسيرة الذاتية.",
+        en: "CV upload pipeline with PDF validation, AI parsing, parsed-data review and edit flow.",
+        fr: "Pipeline d'upload CV avec validation PDF, parsing IA, revue et edition des donnees extraites.",
+        ar: "مسار رفع السيرة الذاتية مع التحقق من PDF والتحليل بالذكاء الاصطناعي ومراجعة وتعديل البيانات المستخرجة.",
       },
       {
-        en: "User-focused interface for turning career data into actionable next steps.",
-        fr: "Interface orientee utilisateur pour transformer les donnees carriere en actions concretes.",
-        ar: "واجهة تساعد المستخدم على تحويل بياناته المهنية إلى خطوات عملية.",
+        en: "AI match analysis that scores how well a CV fits a saved job offer and keeps result history.",
+        fr: "Analyse IA qui mesure l'adequation entre un CV et une offre enregistree, avec historique des resultats.",
+        ar: "تحليل تطابق بالذكاء الاصطناعي يقيس مدى ملاءمة السيرة الذاتية لعرض عمل محفوظ مع حفظ سجل النتائج.",
       },
       {
-        en: "Built as a SaaS MVP that can evolve into a subscription product.",
-        fr: "Construit comme MVP SaaS pouvant evoluer vers un produit par abonnement.",
-        ar: "مبني كـ MVP لمنصة SaaS قابلة للتطور إلى منتج باشتراك.",
+        en: "Tailored cover letter generation with editing and version history.",
+        fr: "Generation de lettres de motivation personnalisees avec edition et historique des versions.",
+        ar: "توليد رسائل تحفيزية مخصصة مع إمكانية التعديل وحفظ تاريخ النسخ.",
+      },
+      {
+        en: "Contextual mock interview sessions grounded in the selected application, CV and latest match analysis.",
+        fr: "Entretiens simules contextuels bases sur la candidature selectionnee, le CV et la derniere analyse de matching.",
+        ar: "مقابلات عمل تجريبية مبنية على الطلب المختار والسيرة الذاتية وآخر تحليل تطابق.",
+      },
+      {
+        en: "Application tracker with drag-and-drop Kanban board, filters, details and quick actions.",
+        fr: "Suivi des candidatures avec tableau Kanban drag-and-drop, filtres, details et actions rapides.",
+        ar: "متابعة طلبات العمل عبر لوحة Kanban بالسحب والإفلات مع فلاتر وتفاصيل وإجراءات سريعة.",
       },
     ],
     challenge: {
-      en: "The main challenge is keeping AI guidance useful and structured instead of generic. The product needs clear workflows that help users make decisions, not only generate text.",
-      fr: "Le defi principal est de rendre l'assistance IA utile et structuree, pas generique. Le produit doit aider les utilisateurs a prendre des decisions, pas seulement generer du texte.",
-      ar: "التحدي الرئيسي هو جعل توجيه الذكاء الاصطناعي مفيدا ومنظما وليس عاما فقط. المنتج يجب أن يساعد المستخدم على اتخاذ قرارات وليس مجرد توليد نصوص.",
+      en: "The main challenge was connecting several AI actions into one practical workflow. CV parsing, job data, match scoring, cover letters and interview practice needed to share context so the product felt like a career workspace, not separate AI tools.",
+      fr: "Le defi principal etait de connecter plusieurs actions IA dans un workflow utile. Parsing CV, donnees d'offre, scoring, lettres de motivation et entretien simule devaient partager le meme contexte pour donner une vraie experience carriere.",
+      ar: "كان التحدي هو ربط عدة وظائف ذكاء اصطناعي في مسار عملي واحد. تحليل السيرة، بيانات العرض، نتيجة التطابق، الرسائل التحفيزية، والتدرب على المقابلات يجب أن تتشارك نفس السياق حتى تبدو المنصة كمساحة مهنية واحدة.",
     },
     outcome: {
-      en: "The MVP is around 80% ready and will be prepared for deployment after the portfolio and brand foundation are updated.",
-      fr: "Le MVP est environ 80% pret et sera prepare pour le deploiement apres la mise a jour du portfolio et de la base de marque.",
-      ar: "الـ MVP جاهز تقريبا بنسبة 80% وسيتم تجهيزه للنشر بعد تحديث البورتفوليو والأساس الشخصي.",
+      en: "The MVP includes authentication, profile management, CV and job management, AI matching, cover letters, mock interviews, application tracking, analytics and deployment documentation.",
+      fr: "Le MVP inclut authentification, profil, gestion des CV et offres, matching IA, lettres de motivation, entretiens simules, suivi des candidatures, analytics et documentation de deploiement.",
+      ar: "يشمل الـ MVP تسجيل الدخول وإدارة الملف الشخصي والسير الذاتية والعروض وMatching بالذكاء الاصطناعي ورسائل تحفيزية ومقابلات تجريبية وتتبع الطلبات وتحليلات ووثائق نشر.",
     },
+    coverImage: {
+      src: "/projects/careercraft/careercraft-dashboard-preview.png",
+      alt: {
+        en: "CareerCraft dashboard preview with job fit and interview preparation indicators.",
+        fr: "Apercu du dashboard CareerCraft avec score de matching et preparation entretien.",
+        ar: "معاينة لوحة CareerCraft مع مؤشر تطابق الوظيفة وتحضير المقابلة.",
+      },
+    },
+    screenshots: [
+      {
+        src: "/projects/careercraft/careercraft-dashboard-preview.png",
+        alt: {
+          en: "CareerCraft landing dashboard preview.",
+          fr: "Apercu dashboard de la landing CareerCraft.",
+          ar: "معاينة لوحة CareerCraft في الصفحة الرئيسية.",
+        },
+        caption: {
+          en: "Replace this with real dashboard, AI matching, cover-letter or interview screenshots when ready.",
+          fr: "A remplacer par de vraies captures du dashboard, du matching IA, des lettres ou des entretiens.",
+          ar: "استبدلها لاحقا بصور حقيقية للوحة التحكم أو المطابقة أو الرسائل أو المقابلات.",
+        },
+      },
+      {
+        src: "/projects/careercraft/careercraft-logo.png",
+        alt: {
+          en: "CareerCraft logo asset.",
+          fr: "Logo CareerCraft.",
+          ar: "شعار CareerCraft.",
+        },
+        caption: {
+          en: "Temporary brand asset until you add detailed product screenshots or a demo video.",
+          fr: "Asset de marque temporaire en attendant les captures produit ou une video demo.",
+          ar: "عنصر مؤقت للهوية إلى أن تضيف صور المنتج أو فيديو توضيحي.",
+        },
+      },
+    ],
   },
   {
     id: 2,
@@ -107,51 +152,366 @@ export const projects: Project[] = [
   {
     id: 3,
     slug: "yalla-order",
-    hidden: true,
+    projectType: "mobile",
     title: {
-      en: "Yalla Order",
-      fr: "Yalla Order",
-      ar: "Yalla Order",
+      en: "YallaOrder",
+      fr: "YallaOrder",
+      ar: "YallaOrder",
     },
     shortDescription: {
-      en: "Restaurant QR ordering system that lets customers browse menus and place orders from their table.",
-      fr: "Systeme de commande restaurant par QR code permettant aux clients de consulter le menu et commander depuis leur table.",
-      ar: "نظام طلبات مطاعم عبر QR يسمح للزبائن بتصفح القائمة وطلب الطعام من الطاولة.",
+      en: "Expo mobile app for cafes and restaurants where customers scan a table QR code, browse the menu and order from their table.",
+      fr: "Application mobile Expo pour cafes et restaurants : le client scanne le QR de la table, consulte le menu et commande depuis sa place.",
+      ar: "تطبيق موبايل Expo للمقاهي والمطاعم يسمح للزبون بمسح QR الطاولة وتصفح القائمة والطلب من مكانه.",
     },
     overview: {
-      en: "Yalla Order is designed for restaurants and cafes that need a simple digital ordering flow. Customers scan a QR code, browse the menu and send their order from the table.",
-      fr: "Yalla Order est concu pour les restaurants et cafes qui ont besoin d'un parcours de commande digital simple. Le client scanne un QR code, consulte le menu et envoie sa commande.",
-      ar: "Yalla Order موجه للمطاعم والمقاهي التي تحتاج مسار طلب رقمي بسيط. يمسح الزبون رمز QR، يتصفح القائمة ويرسل الطلب من الطاولة.",
+      en: "YallaOrder is a multi-role QR ordering platform for dine-in service. Managers create tables, QR codes, menu categories, products, promo codes and staff accounts; guests scan a table QR code, order from the mobile app, and track the order while waiters manage live service status.",
+      fr: "YallaOrder est une plateforme mobile de commande par QR pour le service sur place. Les managers creent les tables, QR codes, categories, produits, codes promo et comptes staff; les clients scannent le QR de la table, commandent depuis l'application et suivent la commande pendant que les serveurs gerent les statuts en direct.",
+      ar: "YallaOrder منصة طلبات عبر QR للخدمة داخل المطاعم والمقاهي. المدير ينشئ الطاولات وأكواد QR والفئات والمنتجات والكوبونات وحسابات الفريق، والزبون يمسح QR الطاولة ويطلب من التطبيق ويتابع حالة الطلب بينما يتابع النادل الطلبات المباشرة.",
     },
-    visualLabel: "QR Ordering System",
+    visualLabel: "Mobile QR Ordering App",
     status: { en: "Project built", fr: "Projet realise", ar: "مشروع منجز" },
-    technologies: ["Next.js", "React", "Node.js", "Tailwind CSS"],
+    technologies: ["Expo", "React Native", "TypeScript", "Express", "Prisma", "MongoDB", "JWT", "Zod"],
     features: [
       {
-        en: "QR-based table ordering flow.",
-        fr: "Parcours de commande par table via QR code.",
-        ar: "مسار طلب من الطاولة عبر QR.",
+        en: "Customer and guest flow with QR scan, manual table entry, live menu, product details, cart, promo codes and order tracking.",
+        fr: "Parcours client/visiteur avec scan QR, saisie manuelle de table, menu live, details produit, panier, codes promo et suivi de commande.",
+        ar: "مسار للزبون والضيف يشمل مسح QR أو إدخال رقم الطاولة، قائمة مباشرة، تفاصيل المنتج، السلة، الكوبونات وتتبع الطلب.",
       },
       {
-        en: "Digital menu experience for restaurants and cafes.",
-        fr: "Experience menu digital pour restaurants et cafes.",
-        ar: "تجربة قائمة رقمية للمطاعم والمقاهي.",
+        en: "Manager workspace for dashboard metrics, menu categories, products, tables, QR code generation, orders and promo codes.",
+        fr: "Espace manager pour dashboard, categories, produits, tables, generation QR, commandes et codes promo.",
+        ar: "مساحة مدير لإحصائيات المطعم، الفئات، المنتجات، الطاولات، توليد QR، الطلبات والكوبونات.",
       },
       {
-        en: "Foundation for a future restaurant SaaS or POS-connected product.",
-        fr: "Base pour un futur SaaS restaurant ou produit connecte au POS.",
-        ar: "أساس لمنتج SaaS للمطاعم أو نظام مرتبط بالـ POS مستقبلا.",
+        en: "Waiter workflow with live orders, status filters, ready board, table queue and order detail screens.",
+        fr: "Workflow serveur avec commandes live, filtres par statut, ready board, file par table et details commande.",
+        ar: "مسار للنادل يشمل الطلبات المباشرة، فلاتر الحالة، لوحة الطلبات الجاهزة، قائمة الطاولات وتفاصيل الطلب.",
+      },
+      {
+        en: "Role-based access for guest customers, authenticated customers, waiters, managers and super admins.",
+        fr: "Acces par role pour clients invites, clients connectes, serveurs, managers et super admins.",
+        ar: "صلاحيات حسب الدور للضيف والزبون المسجل والنادل والمدير والمشرف العام.",
+      },
+      {
+        en: "Rewards and promo logic with welcome spin, percentage/fixed discounts, usage limits and combined discount pricing.",
+        fr: "Logique de recompenses et promos avec welcome spin, remises fixes/pourcentage, limites d'utilisation et calcul combine.",
+        ar: "منطق مكافآت وكوبونات يشمل هدية ترحيب وخصومات نسبة أو قيمة ثابتة وحدود استخدام وحساب خصومات مركبة.",
       },
     ],
     challenge: {
-      en: "The challenge was making the order flow simple enough for customers while keeping the product extensible for restaurants.",
-      fr: "Le defi etait de rendre le parcours de commande simple pour le client tout en gardant le produit extensible pour les restaurants.",
-      ar: "كان التحدي جعل مسار الطلب بسيطا للزبون وقابلا للتوسع بالنسبة للمطعم.",
+      en: "The challenge was designing one mobile app that feels simple for a guest scanning a table, while still supporting operational roles for waiters, managers and super admins with reliable order status, pricing, promo and QR flows.",
+      fr: "Le defi etait de concevoir une seule app mobile simple pour le client qui scanne une table, tout en supportant les roles operationnels des serveurs, managers et super admins avec statuts, prix, promos et QR fiables.",
+      ar: "كان التحدي بناء تطبيق موبايل واحد بسيط للزبون الذي يمسح QR الطاولة، وفي نفس الوقت يدعم أدوار النادل والمدير والمشرف مع حالات الطلب والتسعير والكوبونات وQR بشكل موثوق.",
     },
     outcome: {
-      en: "The project is a strong base for restaurant digital solutions, including ordering, dashboards and future POS integration.",
-      fr: "Le projet constitue une bonne base pour des solutions digitales restaurant : commande, dashboards et integration POS future.",
-      ar: "يمثل المشروع قاعدة قوية لحلول المطاعم الرقمية مثل الطلبات ولوحات التحكم وتكامل POS لاحقا.",
+      en: "The project became a complete mobile ordering MVP with real screenshots, seeded demo data, backend health checks, daily logs, dynamic Expo API host detection and a strong base for restaurant ordering or POS-connected products.",
+      fr: "Le projet est devenu un MVP mobile complet avec captures reelles, donnees demo, health checks backend, logs journaliers, detection dynamique de l'API Expo et une base solide pour un produit restaurant ou connecte POS.",
+      ar: "أصبح المشروع MVP موبايل كامل مع صور حقيقية وبيانات تجريبية وHealth checks وLogs يومية واكتشاف تلقائي لعنوان API في Expo وقاعدة قوية لمنتج طلبات مطاعم أو تكامل POS.",
+    },
+    coverImage: {
+      src: "/projects/yallaorder/qr-scan.jpg",
+      alt: {
+        en: "YallaOrder QR scan screen for table ordering.",
+        fr: "Ecran de scan QR YallaOrder pour commande a table.",
+        ar: "شاشة مسح QR في YallaOrder للطلب من الطاولة.",
+      },
+    },
+    screenshots: [
+      {
+        src: "/projects/yallaorder/qr-scan.jpg",
+        alt: {
+          en: "QR scan and table entry screen.",
+          fr: "Ecran scan QR et saisie de table.",
+          ar: "شاشة مسح QR وإدخال الطاولة.",
+        },
+        caption: {
+          en: "Customer entry flow with QR scan and manual table code fallback.",
+          fr: "Entree client avec scan QR et saisie manuelle du code table.",
+          ar: "دخول الزبون عبر QR أو إدخال رقم الطاولة يدويا.",
+        },
+      },
+      {
+        src: "/projects/yallaorder/menu-customer.jpg",
+        alt: {
+          en: "Customer menu screen.",
+          fr: "Ecran menu client.",
+          ar: "شاشة قائمة الطعام للزبون.",
+        },
+        caption: {
+          en: "Live menu preview for the selected table.",
+          fr: "Apercu du menu live pour la table selectionnee.",
+          ar: "عرض القائمة المباشرة للطاولة المختارة.",
+        },
+      },
+      {
+        src: "/projects/yallaorder/cart-customer.jpg",
+        alt: {
+          en: "Customer cart screen.",
+          fr: "Ecran panier client.",
+          ar: "شاشة سلة الزبون.",
+        },
+        caption: {
+          en: "Cart review with product images, quantities, notes and total.",
+          fr: "Panier avec images, quantites, notes et total.",
+          ar: "مراجعة السلة مع الصور والكميات والملاحظات والمجموع.",
+        },
+      },
+      {
+        src: "/projects/yallaorder/order-tracking.jpg",
+        alt: {
+          en: "Customer order tracking screen.",
+          fr: "Ecran de suivi commande client.",
+          ar: "شاشة تتبع الطلب للزبون.",
+        },
+        caption: {
+          en: "Guest checkout keeps the customer on live order tracking.",
+          fr: "Le checkout invite garde le client sur le suivi live.",
+          ar: "بعد طلب الضيف يبقى الزبون في شاشة تتبع مباشرة.",
+        },
+      },
+      {
+        src: "/projects/yallaorder/waiter-live-orders.jpg",
+        alt: {
+          en: "Waiter live orders screen.",
+          fr: "Ecran commandes live serveur.",
+          ar: "شاشة الطلبات المباشرة للنادل.",
+        },
+        caption: {
+          en: "Waiter workflow for active orders, table context and status updates.",
+          fr: "Workflow serveur pour commandes actives, contexte table et statuts.",
+          ar: "مسار النادل للطلبات النشطة ومعلومات الطاولة وتحديث الحالات.",
+        },
+      },
+      {
+        src: "/projects/yallaorder/manager-dashboard.jpg",
+        alt: {
+          en: "Manager dashboard screen.",
+          fr: "Dashboard manager.",
+          ar: "لوحة المدير.",
+        },
+        caption: {
+          en: "Manager dashboard with revenue, orders, live queue and discounts.",
+          fr: "Dashboard manager avec revenus, commandes, file live et remises.",
+          ar: "لوحة المدير للإيرادات والطلبات والقائمة المباشرة والخصومات.",
+        },
+      },
+      {
+        src: "/projects/yallaorder/manage-tables.jpg",
+        alt: {
+          en: "Manager table management screen.",
+          fr: "Gestion des tables manager.",
+          ar: "إدارة الطاولات للمدير.",
+        },
+        caption: {
+          en: "Table management with seats, QR shortcut and table actions.",
+          fr: "Gestion des tables avec places, raccourci QR et actions.",
+          ar: "إدارة الطاولات مع عدد المقاعد واختصار QR والإجراءات.",
+        },
+      },
+      {
+        src: "/projects/yallaorder/table-qr-code.jpg",
+        alt: {
+          en: "Generated table QR code screen.",
+          fr: "Ecran QR code de table genere.",
+          ar: "شاشة QR مولد للطاولة.",
+        },
+        caption: {
+          en: "Generated table QR code ready for printing or sharing.",
+          fr: "QR code de table pret a imprimer ou partager.",
+          ar: "QR للطاولة جاهز للطباعة أو المشاركة.",
+        },
+      },
+    ],
+  },
+  {
+    id: 5,
+    slug: "sity-tn",
+    title: {
+      en: "sity.tn",
+      fr: "sity.tn",
+      ar: "sity.tn",
+    },
+    shortDescription: {
+      en: "E-commerce SaaS for Tunisian merchants to launch storefronts, manage catalogs and handle cash-on-delivery operations.",
+      fr: "SaaS e-commerce pour les commercants tunisiens afin de lancer une boutique, gerer le catalogue et traiter les commandes en paiement a la livraison.",
+      ar: "منصة SaaS للتجارة الإلكترونية في تونس تساعد التجار على إطلاق متاجرهم وإدارة المنتجات وطلبات الدفع عند الاستلام.",
+    },
+    overview: {
+      en: "sity.tn is a multi-tenant e-commerce SaaS built for Tunisian merchants. It combines a public storefront, merchant dashboard, admin platform, cash-on-delivery workflows, subscriptions, analytics, notifications and a mobile merchant workspace into one product.",
+      fr: "sity.tn est une plateforme SaaS e-commerce multi-boutique concue pour les commercants tunisiens. Elle regroupe une vitrine publique, un dashboard marchand, une plateforme admin, les workflows de paiement a la livraison, les abonnements, l'analytics, les notifications et un espace mobile marchand.",
+      ar: "sity.tn منصة تجارة إلكترونية متعددة المتاجر موجهة للتجار في تونس. تجمع بين واجهة متجر عامة ولوحة تحكم للتاجر ولوحة إدارة وطلبات الدفع عند الاستلام والاشتراكات والتحليلات والإشعارات وتطبيق تاجر على الهاتف.",
+    },
+    visualLabel: "Tunisia E-commerce SaaS",
+    status: { en: "MVP deployed", fr: "MVP deploye", ar: "MVP منشور" },
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "NestJS",
+      "Prisma",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "Expo",
+    ],
+    liveUrl: "https://sity.tn/",
+    features: [
+      {
+        en: "Merchant dashboard for shop setup, storefront branding, categories, products, variants, banners, coupons and orders.",
+        fr: "Dashboard marchand pour configurer la boutique, l'identite visuelle, les categories, produits, variantes, bannieres, coupons et commandes.",
+        ar: "لوحة تاجر لإعداد المتجر والهوية البصرية والفئات والمنتجات والمتغيرات واللافتات والكوبونات والطلبات.",
+      },
+      {
+        en: "Public storefront at /store/[slug] and wildcard shop subdomains, with catalog, product pages, cart, checkout and order tracking.",
+        fr: "Vitrine publique sur /store/[slug] et sous-domaines de boutiques, avec catalogue, fiches produit, panier, checkout et suivi de commande.",
+        ar: "واجهة متجر عامة عبر /store/[slug] ونطاقات فرعية للمتاجر مع كتالوج وصفحات منتجات وسلة وCheckout وتتبع الطلب.",
+      },
+      {
+        en: "Cash-on-delivery operations with confirmation queues, WhatsApp links, status history, exports, checkout recovery and customer intelligence.",
+        fr: "Operations COD avec file de confirmation, liens WhatsApp, historique des statuts, exports, recuperation checkout et intelligence client.",
+        ar: "إدارة الدفع عند الاستلام مع قائمة تأكيد وروابط WhatsApp وتاريخ الحالات والتصدير واسترجاع الطلبات غير المكتملة ومعلومات العملاء.",
+      },
+      {
+        en: "Admin workspace for users, shops, plans, manual payment proofs, feature controls, audit logs and platform KPIs.",
+        fr: "Espace admin pour utilisateurs, boutiques, plans, preuves de paiement manuel, controles de fonctionnalites, audit logs et KPIs plateforme.",
+        ar: "مساحة إدارة للمستخدمين والمتاجر والخطط وإثباتات الدفع اليدوي والتحكم في الميزات وسجلات التدقيق ومؤشرات المنصة.",
+      },
+      {
+        en: "Merchant mobile app foundation with login, KPIs, products, categories, orders, notifications and settings.",
+        fr: "Base d'application mobile marchand avec connexion, KPIs, produits, categories, commandes, notifications et parametres.",
+        ar: "قاعدة تطبيق هاتف للتاجر تشمل تسجيل الدخول والمؤشرات والمنتجات والفئات والطلبات والإشعارات والإعدادات.",
+      },
+    ],
+    challenge: {
+      en: "The challenge was turning a broad commerce idea into a coherent SaaS product for the Tunisian market: multi-tenant shops, plan limits, COD operations, Arabic/French/English support, storefront SEO and production deployment all had to work together.",
+      fr: "Le defi etait de transformer une idee e-commerce large en produit SaaS coherent pour le marche tunisien : boutiques multi-tenant, limites par plan, operations COD, support arabe/francais/anglais, SEO storefront et deploiement production devaient fonctionner ensemble.",
+      ar: "كان التحدي هو تحويل فكرة تجارة إلكترونية واسعة إلى منتج SaaS متماسك للسوق التونسية، مع متاجر متعددة، حدود حسب الخطة، عمليات الدفع عند الاستلام، دعم العربية والفرنسية والإنجليزية، SEO للمتاجر ونشر إنتاجي.",
+    },
+    outcome: {
+      en: "The MVP now has a production-ready foundation: deployed web and API services, merchant and admin flows, Tunisia-focused COD workflows, shared validation schemas, and a roadmap for payment gateways, delivery rules and deeper automation.",
+      fr: "Le MVP possede maintenant une base prete pour la production : services web et API deployes, parcours marchand et admin, workflows COD adaptes a la Tunisie, schemas de validation partages et roadmap pour paiements, livraison et automatisation.",
+      ar: "أصبح للـ MVP أساس جاهز للإنتاج: خدمات Web وAPI منشورة، مسارات للتاجر والإدارة، عمليات COD مناسبة لتونس، مخططات تحقق مشتركة، وخارطة طريق للدفع والتوصيل والأتمتة.",
+    },
+    coverImage: {
+      src: "/projects/sity-tn/storefront-landing-concept.png",
+      alt: {
+        en: "Temporary concept visual for the sity.tn storefront landing page.",
+        fr: "Visuel concept temporaire pour la page d'accueil storefront de sity.tn.",
+        ar: "صورة Concept مؤقتة لواجهة متجر sity.tn.",
+      },
+    },
+    screenshots: [
+      {
+        src: "/projects/sity-tn/storefront-landing-concept.png",
+        alt: {
+          en: "Temporary storefront landing concept for sity.tn.",
+          fr: "Concept temporaire de landing storefront pour sity.tn.",
+          ar: "Concept مؤقت للصفحة الرئيسية لمتجر sity.tn.",
+        },
+        caption: {
+          en: "Replace this with the real storefront home or live shop screenshot.",
+          fr: "A remplacer par une vraie capture de la page boutique ou d'un shop live.",
+          ar: "استبدلها بصورة حقيقية للمتجر أو Shop منشور.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/storefront-products-concept.png",
+        alt: {
+          en: "Temporary product catalog concept for sity.tn.",
+          fr: "Concept temporaire du catalogue produits pour sity.tn.",
+          ar: "Concept مؤقت لكتالوج المنتجات في sity.tn.",
+        },
+        caption: {
+          en: "Replace this with the real products/catalog page screenshot.",
+          fr: "A remplacer par une vraie capture de la page produits/catalogue.",
+          ar: "استبدلها بصورة حقيقية لصفحة المنتجات أو الكتالوج.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/storefront-checkout-concept.png",
+        alt: {
+          en: "Temporary checkout concept for sity.tn.",
+          fr: "Concept temporaire du checkout pour sity.tn.",
+          ar: "Concept مؤقت لصفحة الدفع في sity.tn.",
+        },
+        caption: {
+          en: "Replace this with the real cash-on-delivery checkout screenshot.",
+          fr: "A remplacer par une vraie capture du checkout paiement a la livraison.",
+          ar: "استبدلها بصورة حقيقية لصفحة Checkout الدفع عند الاستلام.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/storefront-cart-concept.png",
+        alt: {
+          en: "Temporary cart concept for sity.tn.",
+          fr: "Concept temporaire du panier pour sity.tn.",
+          ar: "Concept مؤقت لسلة الشراء في sity.tn.",
+        },
+        caption: {
+          en: "Replace this with the real cart, dashboard, admin or mobile screenshot you want to highlight.",
+          fr: "A remplacer par la vraie capture du panier, dashboard, admin ou mobile a mettre en avant.",
+          ar: "استبدلها بصورة حقيقية للسلة أو لوحة التاجر أو الإدارة أو الهاتف حسب ما تريد إبرازه.",
+        },
+      },
+    ],
+  },
+  {
+    id: 6,
+    slug: "telegram-ecommerce-monitor",
+    title: {
+      en: "Telegram Ecommerce Monitor",
+      fr: "Telegram Ecommerce Monitor",
+      ar: "Telegram Ecommerce Monitor",
+    },
+    shortDescription: {
+      en: "Data automation dashboard for authorized Telegram ecommerce channels, extracting products, media and prices into a searchable catalog.",
+      fr: "Dashboard d'automatisation de donnees pour canaux e-commerce Telegram autorises, avec extraction produits, medias et prix dans un catalogue searchable.",
+      ar: "لوحة أتمتة بيانات لقنوات Telegram التجارية المصرح بها، تستخرج المنتجات والوسائط والأسعار إلى كتالوج قابل للبحث.",
+    },
+    overview: {
+      en: "Telegram Ecommerce Monitor is a full-stack data tool for monitoring ecommerce product posts from authorized Telegram channels. It combines Telegram MTProto authentication, channel syncing, queued scraping jobs, realtime progress, product extraction, media handling, search, filtering, export and price comparison.",
+      fr: "Telegram Ecommerce Monitor est un outil full-stack de donnees pour suivre les publications produits de canaux Telegram autorises. Il combine authentification MTProto, synchronisation des canaux, jobs de scraping en queue, progression temps reel, extraction produits, gestion media, recherche, filtres, export et comparaison de prix.",
+      ar: "Telegram Ecommerce Monitor أداة Full Stack لمراقبة منشورات المنتجات من قنوات Telegram المصرح بها. تجمع بين مصادقة MTProto ومزامنة القنوات ووظائف استخراج في الخلفية وتتبع فوري واستخراج المنتجات والوسائط والبحث والتصفية والتصدير ومقارنة الأسعار.",
+    },
+    visualLabel: "Data Automation Dashboard",
+    status: { en: "Project built", fr: "Projet realise", ar: "مشروع منجز" },
+    technologies: ["Next.js", "TypeScript", "Express", "Prisma", "PostgreSQL", "Redis", "BullMQ", "MinIO", "Socket.IO"],
+    features: [
+      {
+        en: "Telegram MTProto login with phone verification, session handling and channel synchronization.",
+        fr: "Connexion Telegram MTProto avec verification telephone, gestion de session et synchronisation des canaux.",
+        ar: "تسجيل دخول Telegram MTProto عبر التحقق بالهاتف مع إدارة الجلسة ومزامنة القنوات.",
+      },
+      {
+        en: "Background scraping workers powered by BullMQ and Redis with realtime job progress over WebSockets.",
+        fr: "Workers de scraping en arriere-plan avec BullMQ/Redis et progression temps reel via WebSockets.",
+        ar: "Workers لاستخراج البيانات في الخلفية باستخدام BullMQ وRedis مع تقدم فوري عبر WebSockets.",
+      },
+      {
+        en: "Product extraction from Telegram messages using rule-based parsing with optional Gemini AI cleanup.",
+        fr: "Extraction produits depuis les messages Telegram via parsing par regles, avec nettoyage Gemini AI optionnel.",
+        ar: "استخراج المنتجات من رسائل Telegram عبر قواعد Parsing مع تنظيف اختياري باستخدام Gemini AI.",
+      },
+      {
+        en: "Media download and storage flow for photos, videos and documents using local storage or MinIO/S3.",
+        fr: "Telechargement et stockage des photos, videos et documents via stockage local ou MinIO/S3.",
+        ar: "تنزيل وتخزين الصور والفيديوهات والملفات عبر التخزين المحلي أو MinIO/S3.",
+      },
+      {
+        en: "Searchable product catalog with filters, review status, CSV/JSON export and price comparison across channels.",
+        fr: "Catalogue produit searchable avec filtres, statut de revue, export CSV/JSON et comparaison des prix entre canaux.",
+        ar: "كتالوج منتجات قابل للبحث مع فلاتر وحالة مراجعة وتصدير CSV/JSON ومقارنة أسعار بين القنوات.",
+      },
+    ],
+    challenge: {
+      en: "The challenge was making Telegram collection reliable and reviewable: long-running jobs, media downloads, noisy message formats, rate limits, realtime updates and safe catalog cleanup all had to work together without losing the original source data.",
+      fr: "Le defi etait de rendre la collecte Telegram fiable et revisable : jobs longs, telechargement media, formats de messages variables, rate limits, mises a jour temps reel et nettoyage catalogue devaient fonctionner sans perdre la donnee source.",
+      ar: "كان التحدي هو جعل جمع بيانات Telegram موثوقا وقابلا للمراجعة: وظائف طويلة، تنزيل وسائط، صيغ رسائل غير منتظمة، حدود طلبات، تحديثات فورية، وتنظيف الكتالوج بدون فقدان البيانات الأصلية.",
+    },
+    outcome: {
+      en: "The project became a strong backend/data automation showcase with a dashboard, queue worker, realtime status, product review workflow, media pipeline and Dockerized infrastructure for Postgres, Redis and MinIO.",
+      fr: "Le projet est devenu une bonne preuve de competences backend/data automation avec dashboard, queue worker, statut temps reel, workflow de revue produit, pipeline media et infrastructure Docker Postgres, Redis et MinIO.",
+      ar: "أصبح المشروع دليلا قويا على مهارات Backend وData Automation عبر Dashboard وQueue Worker وحالة فورية ومراجعة منتجات ومسار وسائط وبنية Docker مع Postgres وRedis وMinIO.",
     },
   },
   {

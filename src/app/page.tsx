@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Experience } from "@/components/sections/Experience";
+import { Certifications } from "@/components/sections/Certifications";
 import { Projects } from "@/components/sections/Projects";
 import { ContactForm } from "@/components/ContactForm";
 import { SocialIcons } from "@/components/SocialIcons";
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <About />
       <Experience />
+      <Certifications />
       <Projects />
       
       <section id="contact" className="py-20 bg-muted/20">

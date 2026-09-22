@@ -3,6 +3,7 @@ import { seo, hero, sectionTitles, contact, projectDetailsLabels, footer } from 
 import { experiences } from "./experience";
 import { projects } from "./projects";
 import { skillGroups } from "./skills";
+import { certifications } from "./certifications";
 
 export * from "./types";
 export * from "./profile";
@@ -11,6 +12,7 @@ export * from "./sections";
 export * from "./experience";
 export * from "./projects";
 export * from "./skills";
+export * from "./certifications";
 
 export const portfolioData = {
   seo,
@@ -22,6 +24,7 @@ export const portfolioData = {
   footer,
   projectDetailsLabels,
   experiences,
+  certifications,
   projects,
   skillGroups,
 };
