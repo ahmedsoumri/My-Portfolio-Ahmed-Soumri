@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useTranslation } from "@/context/LanguageContext";
@@ -13,6 +14,8 @@ const SECTION_IDS = ["home", "about", "experience", "certifications", "projects"
 
 export function Navbar() {
   const { language } = useTranslation();
+  const router = useRouter();
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -56,13 +59,45 @@ export function Navbar() {
     return () => observer.disconnect();
   }, []);
 
-  const scrollToSection = (id: string) => {
-    setMobileMenuOpen(false);
-    const element = document.getElementById(id.toLowerCase());
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const scrollToSection = useCallback(
+    (id: string) => {
+      setMobileMenuOpen(false);
+      const targetId = id.toLowerCase();
+
+      if (pathname !== "/") {
+        router.push(`/#${targetId}`);
+        return;
+      }
+
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    },
+    [pathname, router]
+  );
+
+  // After navigating back to "/" from another route (e.g. a project detail
+  // page), finish the job by scrolling to the section named in the hash.
+  useEffect(() => {
+    if (pathname !== "/" || !window.location.hash) return;
+    const targetId = window.location.hash.slice(1);
+
+    let attempts = 0;
+    let frame: number;
+    const tryScroll = () => {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      } else if (attempts < 20) {
+        attempts += 1;
+        frame = requestAnimationFrame(tryScroll);
+      }
+    };
+    tryScroll();
+
+    return () => cancelAnimationFrame(frame);
+  }, [pathname]);
 
   return (
     <header
