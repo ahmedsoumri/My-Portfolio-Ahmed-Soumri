@@ -12,6 +12,7 @@ import { portfolioData } from "@/data/portfoliodata";
 const inter = Inter({ subsets: ["latin"] });
 
 const { seo, profile } = portfolioData;
+const siteUrl = seo.siteUrl.replace(/\/$/, "");
 
 export const metadata: Metadata = {
   title: {
@@ -23,9 +24,9 @@ export const metadata: Metadata = {
   authors: [{ name: seo.author, url: seo.siteUrl }],
   creator: seo.author,
   publisher: seo.author,
-  metadataBase: new URL(seo.siteUrl),
+  metadataBase: new URL(siteUrl),
   alternates: {
-    canonical: "/",
+    canonical: `${siteUrl}/`,
     languages: {
       "en-US": "/",
       "fr-FR": "/",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: seo.locale,
-    url: seo.siteUrl,
+    url: `${siteUrl}/`,
     siteName: seo.siteName,
     title: seo.title,
     description: seo.description,
@@ -81,7 +82,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: profile.name,
-  url: seo.siteUrl,
+  url: `${siteUrl}/`,
   image: seo.ogImage,
   jobTitle: "Full Stack Developer",
   description: seo.description,

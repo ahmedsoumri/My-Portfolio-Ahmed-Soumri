@@ -188,7 +188,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
           {(project.githubUrl || project.liveUrl) && (
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
               {project.githubUrl && (
-                <Button variant="outline" size="lg" className="w-full flex-1" asChild>
+                <Button variant="outline" size="lg" className="w-full flex-1 py-3 bg-black text-white hover:bg-black/80 hover:text-white" asChild>
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-5 w-5" /> {labels.repository[language]}
                   </a>

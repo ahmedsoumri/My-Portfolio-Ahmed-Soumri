@@ -82,29 +82,40 @@ export function Certifications() {
           <h2 className="text-3xl font-bold">{sections.certifications[language]}</h2>
         </div>
 
-        <div className="mx-auto grid max-w-5xl items-start gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-5xl items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {certifications.map((certification) => (
             <Card
               key={certification.id}
-              className="certification-card border-primary/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="certification-card h-full border-primary/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <CardContent className="flex flex-col gap-4 p-5">
-                {certification.previewImage && (
-                  <button
-                    type="button"
-                    className="relative aspect-[16/9] overflow-hidden rounded-lg border bg-muted text-left shadow-sm transition hover:opacity-90"
-                    onClick={() => certification.pdfUrl && setPreviewCertificate(certification)}
-                    aria-label={`Preview ${certification.title[language]}`}
-                  >
-                    <Image
-                      src={certification.previewImage}
-                      alt={`${certification.title[language]} certificate preview`}
-                      fill
-                      sizes="(min-width: 1024px) 320px, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover"
-                    />
-                  </button>
-                )}
+              <CardContent className="flex h-full min-h-[28rem] flex-col gap-4 p-5">
+                <div className="relative aspect-[16/9] overflow-hidden rounded-lg border bg-muted text-left shadow-sm">
+                  {certification.previewImage ? (
+                    <button
+                      type="button"
+                      className="absolute inset-0 transition hover:opacity-90"
+                      onClick={() => certification.pdfUrl && setPreviewCertificate(certification)}
+                      aria-label={`Preview ${certification.title[language]}`}
+                    >
+                      <Image
+                        src={certification.previewImage}
+                        alt={`${certification.title[language]} certificate preview`}
+                        fill
+                        sizes="(min-width: 1024px) 320px, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover"
+                      />
+                    </button>
+                  ) : (
+                    <div className="flex h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-primary/10 via-cyan-500/10 to-purple-500/10 p-6 text-center">
+                      <div className="rounded-xl bg-background/70 p-3 text-primary shadow-sm">
+                        {categoryIcons[certification.category]}
+                      </div>
+                      <p className="text-sm font-medium text-muted-foreground">
+                        {certification.issuer}
+                      </p>
+                    </div>
+                  )}
+                </div>
 
                 <div className="flex items-start justify-between gap-4">
                   <div className="rounded-xl bg-primary/10 p-3 text-primary">
@@ -125,25 +136,27 @@ export function Certifications() {
                   )}
                 </div>
 
-                {certification.pdfUrl && (
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    <Button
-                      type="button"
-                      variant="secondary"
-                      size="sm"
-                      onClick={() => setPreviewCertificate(certification)}
-                    >
-                      <Eye className="h-4 w-4" />
-                      Preview
-                    </Button>
-                    <Button type="button" variant="outline" size="sm" asChild>
-                      <a href={certification.pdfUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4" />
-                        PDF
-                      </a>
-                    </Button>
-                  </div>
-                )}
+                <div className="mt-auto flex min-h-10 flex-wrap gap-2 pt-2">
+                  {certification.pdfUrl && (
+                    <>
+                      <Button
+                        type="button"
+                        variant="secondary"
+                        size="sm"
+                        onClick={() => setPreviewCertificate(certification)}
+                      >
+                        <Eye className="h-4 w-4" />
+                        Preview
+                      </Button>
+                      <Button type="button" variant="outline" size="sm" asChild>
+                        <a href={certification.pdfUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" />
+                          PDF
+                        </a>
+                      </Button>
+                    </>
+                  )}
+                </div>
               </CardContent>
             </Card>
           ))}

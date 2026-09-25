@@ -35,9 +35,10 @@ export async function generateMetadata({
   }
 
   const { seo, profile } = portfolioData;
+  const siteUrl = seo.siteUrl.replace(/\/$/, "");
   const title = `${project.title.en} - Project Case Study`;
   const description = project.shortDescription.en;
-  const url = `/projects/${project.id}`;
+  const url = `${siteUrl}/projects/${project.id}`;
   const image = project.coverImage?.src ?? project.screenshots?.[0]?.src ?? seo.ogImage;
 
   return {
