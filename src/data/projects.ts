@@ -63,38 +63,246 @@ export const projects: Project[] = [
       ar: "يشمل الـ MVP تسجيل الدخول وإدارة الملف الشخصي والسير الذاتية والعروض وMatching بالذكاء الاصطناعي ورسائل تحفيزية ومقابلات تجريبية وتتبع الطلبات وتحليلات ووثائق نشر.",
     },
     coverImage: {
-      src: "/projects/careercraft/careercraft-dashboard-preview.png",
+      src: "/projects/careercraft/carrercraft-landing-page.png",
       alt: {
-        en: "CareerCraft dashboard preview with job fit and interview preparation indicators.",
-        fr: "Apercu du dashboard CareerCraft avec score de matching et preparation entretien.",
-        ar: "معاينة لوحة CareerCraft مع مؤشر تطابق الوظيفة وتحضير المقابلة.",
+        en: "CareerCraft marketing homepage introducing the AI career assistant.",
+        fr: "Page d'accueil marketing de CareerCraft presentant l'assistant carriere IA.",
+        ar: "الصفحة التسويقية الرئيسية لمنصة CareerCraft المدعومة بالذكاء الاصطناعي.",
       },
     },
     screenshots: [
       {
-        src: "/projects/careercraft/careercraft-dashboard-preview.png",
+        src: "/projects/careercraft/carrercraft-landing-page.png",
         alt: {
-          en: "CareerCraft landing dashboard preview.",
-          fr: "Apercu dashboard de la landing CareerCraft.",
-          ar: "معاينة لوحة CareerCraft في الصفحة الرئيسية.",
+          en: "CareerCraft marketing homepage introducing the AI career assistant.",
+          fr: "Page d'accueil marketing de CareerCraft presentant l'assistant carriere IA.",
+          ar: "الصفحة التسويقية الرئيسية لمنصة CareerCraft المدعومة بالذكاء الاصطناعي.",
         },
         caption: {
-          en: "Replace this with real dashboard, AI matching, cover-letter or interview screenshots when ready.",
-          fr: "A remplacer par de vraies captures du dashboard, du matching IA, des lettres ou des entretiens.",
-          ar: "استبدلها لاحقا بصور حقيقية للوحة التحكم أو المطابقة أو الرسائل أو المقابلات.",
+          en: "Marketing homepage pitching the AI career workflow to job seekers.",
+          fr: "Page marketing qui presente le workflow carriere IA aux chercheurs d'emploi.",
+          ar: "الصفحة التسويقية التي تعرض مسار العمل بالذكاء الاصطناعي للباحثين عن عمل.",
         },
       },
       {
-        src: "/projects/careercraft/careercraft-logo.png",
+        src: "/projects/careercraft/carrercraft-login.png",
         alt: {
-          en: "CareerCraft logo asset.",
-          fr: "Logo CareerCraft.",
-          ar: "شعار CareerCraft.",
+          en: "CareerCraft login screen.",
+          fr: "Ecran de connexion CareerCraft.",
+          ar: "شاشة تسجيل الدخول إلى CareerCraft.",
         },
         caption: {
-          en: "Temporary brand asset until you add detailed product screenshots or a demo video.",
-          fr: "Asset de marque temporaire en attendant les captures produit ou une video demo.",
-          ar: "عنصر مؤقت للهوية إلى أن تضيف صور المنتج أو فيديو توضيحي.",
+          en: "Authentication screen for candidates and administrators.",
+          fr: "Ecran d'authentification pour candidats et administrateurs.",
+          ar: "شاشة مصادقة للمرشحين والمسؤولين.",
+        },
+      },
+      {
+        src: "/projects/careercraft/carrercraft-register.png",
+        alt: {
+          en: "CareerCraft sign-up screen for new candidates.",
+          fr: "Ecran d'inscription CareerCraft pour les nouveaux candidats.",
+          ar: "شاشة إنشاء حساب جديد للمرشحين في CareerCraft.",
+        },
+        caption: {
+          en: "Self-serve registration to start building a career profile.",
+          fr: "Inscription en libre-service pour demarrer un profil carriere.",
+          ar: "تسجيل ذاتي لبدء إنشاء ملف مهني.",
+        },
+      },
+      {
+        src: "/projects/careercraft/carrercraft-candidate-profile.png",
+        alt: {
+          en: "Candidate profile management screen.",
+          fr: "Ecran de gestion du profil candidat.",
+          ar: "شاشة إدارة الملف الشخصي للمرشح.",
+        },
+        caption: {
+          en: "Candidate profile with personal details and account settings.",
+          fr: "Profil candidat avec informations personnelles et parametres du compte.",
+          ar: "ملف المرشح مع البيانات الشخصية وإعدادات الحساب.",
+        },
+      },
+      {
+        src: "/projects/careercraft/carrercraft-candidate-upload-cv.png",
+        alt: {
+          en: "CV upload screen with PDF validation.",
+          fr: "Ecran d'upload de CV avec validation PDF.",
+          ar: "شاشة رفع السيرة الذاتية مع التحقق من ملف PDF.",
+        },
+        caption: {
+          en: "CV upload pipeline that validates the PDF before AI parsing.",
+          fr: "Pipeline d'upload qui valide le PDF avant le parsing IA.",
+          ar: "مسار رفع يتحقق من ملف PDF قبل تحليله بالذكاء الاصطناعي.",
+        },
+      },
+      {
+        src: "/projects/careercraft/carrercraft-candidate-my-cvs.png",
+        alt: {
+          en: "Candidate CV library screen.",
+          fr: "Ecran de bibliotheque de CV du candidat.",
+          ar: "شاشة مكتبة السير الذاتية للمرشح.",
+        },
+        caption: {
+          en: "Saved CVs with parsed data ready for review and edits.",
+          fr: "CV enregistres avec donnees extraites pretes a etre revisees.",
+          ar: "سير ذاتية محفوظة مع بيانات مستخرجة جاهزة للمراجعة والتعديل.",
+        },
+      },
+      {
+        src: "/projects/careercraft/carrercraft-candidate-my-jobs.png",
+        alt: {
+          en: "Candidate saved job offers screen.",
+          fr: "Ecran des offres d'emploi enregistrees.",
+          ar: "شاشة عروض العمل المحفوظة للمرشح.",
+        },
+        caption: {
+          en: "Saved job offers tracked for matching, cover letters and applications.",
+          fr: "Offres enregistrees pour le matching, les lettres et les candidatures.",
+          ar: "عروض عمل محفوظة تُستخدم للمطابقة والرسائل التحفيزية والطلبات.",
+        },
+      },
+      {
+        src: "/projects/careercraft/carrercraft-candidate-create-job.png",
+        alt: {
+          en: "Screen for adding a new job offer.",
+          fr: "Ecran d'ajout d'une nouvelle offre d'emploi.",
+          ar: "شاشة إضافة عرض عمل جديد.",
+        },
+        caption: {
+          en: "Manual job offer entry used as the base for AI matching.",
+          fr: "Saisie manuelle d'une offre utilisee comme base pour le matching IA.",
+          ar: "إدخال يدوي لعرض العمل يُستخدم كأساس للمطابقة بالذكاء الاصطناعي.",
+        },
+      },
+      {
+        src: "/projects/careercraft/carrercraft-candidate-ia-matching.png",
+        alt: {
+          en: "AI match analysis screen scoring CV fit against a job offer.",
+          fr: "Ecran d'analyse IA du matching entre CV et offre.",
+          ar: "شاشة تحليل التطابق بالذكاء الاصطناعي بين السيرة والعرض.",
+        },
+        caption: {
+          en: "AI match analysis with a fit score and history of past results.",
+          fr: "Analyse de matching IA avec score d'adequation et historique des resultats.",
+          ar: "تحليل تطابق بالذكاء الاصطناعي مع درجة الملاءمة وسجل النتائج السابقة.",
+        },
+      },
+      {
+        src: "/projects/careercraft/carrercraft-candidate-cover-letters.png",
+        alt: {
+          en: "AI-generated cover letters screen with edit and version history.",
+          fr: "Ecran des lettres de motivation generees avec edition et historique.",
+          ar: "شاشة الرسائل التحفيزية المولدة بالذكاء الاصطناعي مع التعديل وسجل النسخ.",
+        },
+        caption: {
+          en: "Tailored cover letters generated per job offer, with editing and version history.",
+          fr: "Lettres de motivation personnalisees par offre, avec edition et historique des versions.",
+          ar: "رسائل تحفيزية مخصصة لكل عرض عمل مع إمكانية التعديل وحفظ سجل النسخ.",
+        },
+      },
+      {
+        src: "/projects/careercraft/carrercraft-candidate-mock-interviews.png",
+        alt: {
+          en: "Contextual mock interview screen.",
+          fr: "Ecran d'entretien simule contextuel.",
+          ar: "شاشة مقابلة عمل تجريبية سياقية.",
+        },
+        caption: {
+          en: "Mock interview practice grounded in the selected application and CV.",
+          fr: "Entretien simule base sur la candidature et le CV selectionnes.",
+          ar: "مقابلة تجريبية مبنية على الطلب والسيرة الذاتية المختارَين.",
+        },
+      },
+      {
+        src: "/projects/careercraft/carrercraft-candidate-applications-managemnt.png",
+        alt: {
+          en: "Application tracker with a drag-and-drop Kanban board.",
+          fr: "Suivi des candidatures avec tableau Kanban drag-and-drop.",
+          ar: "متابعة الطلبات عبر لوحة Kanban بالسحب والإفلات.",
+        },
+        caption: {
+          en: "Kanban board tracking every application stage with filters and quick actions.",
+          fr: "Tableau Kanban qui suit chaque etape de candidature avec filtres et actions rapides.",
+          ar: "لوحة Kanban تتابع كل مرحلة من مراحل الطلب مع فلاتر وإجراءات سريعة.",
+        },
+      },
+      {
+        src: "/projects/careercraft/carrercraft-candidate-analytic.png",
+        alt: {
+          en: "Candidate analytics dashboard.",
+          fr: "Dashboard analytics du candidat.",
+          ar: "لوحة تحليلات المرشح.",
+        },
+        caption: {
+          en: "Candidate-facing analytics summarizing matches, applications and progress.",
+          fr: "Analytics candidat resumant les matchings, candidatures et progression.",
+          ar: "تحليلات موجهة للمرشح تلخص المطابقات والطلبات والتقدم المحرز.",
+        },
+      },
+      {
+        src: "/projects/careercraft/carrercraft-admin-dashboard.png",
+        alt: {
+          en: "Admin dashboard with platform-wide metrics.",
+          fr: "Dashboard admin avec indicateurs globaux de la plateforme.",
+          ar: "لوحة تحكم الإدارة مع مؤشرات عامة للمنصة.",
+        },
+        caption: {
+          en: "Admin overview of platform usage, users and activity.",
+          fr: "Vue d'ensemble admin de l'usage de la plateforme, des utilisateurs et de l'activite.",
+          ar: "نظرة إدارية عامة على استخدام المنصة والمستخدمين والنشاط.",
+        },
+      },
+      {
+        src: "/projects/careercraft/carrercraft-admin-user-managemnt.png",
+        alt: {
+          en: "Admin user management screen.",
+          fr: "Ecran admin de gestion des utilisateurs.",
+          ar: "شاشة إدارة المستخدمين للإدارة.",
+        },
+        caption: {
+          en: "Admin controls for managing candidate accounts and access.",
+          fr: "Controles admin pour gerer les comptes candidats et leurs acces.",
+          ar: "أدوات إدارية لإدارة حسابات المرشحين وصلاحياتهم.",
+        },
+      },
+      {
+        src: "/projects/careercraft/carrercraft-admin-ia-usage.png",
+        alt: {
+          en: "Admin screen tracking AI usage across the platform.",
+          fr: "Ecran admin de suivi de l'usage IA sur la plateforme.",
+          ar: "شاشة إدارية لمتابعة استخدام الذكاء الاصطناعي على المنصة.",
+        },
+        caption: {
+          en: "AI usage monitoring to track matching, cover-letter and interview requests.",
+          fr: "Suivi de l'usage IA pour le matching, les lettres et les entretiens.",
+          ar: "متابعة استخدام الذكاء الاصطناعي لطلبات المطابقة والرسائل والمقابلات.",
+        },
+      },
+      {
+        src: "/projects/careercraft/carrercraft-admin-setting.png",
+        alt: {
+          en: "Admin platform settings screen.",
+          fr: "Ecran des parametres plateforme admin.",
+          ar: "شاشة إعدادات المنصة للإدارة.",
+        },
+        caption: {
+          en: "Platform-wide configuration and settings for administrators.",
+          fr: "Configuration et parametres globaux de la plateforme pour les administrateurs.",
+          ar: "إعدادات وضبط عامة للمنصة خاصة بالمسؤولين.",
+        },
+      },
+      {
+        src: "/projects/careercraft/carrercraft-not-found-page.png",
+        alt: {
+          en: "Custom 404 not-found page.",
+          fr: "Page 404 personnalisee.",
+          ar: "صفحة 404 مخصصة لغير الموجود.",
+        },
+        caption: {
+          en: "Custom not-found page keeping navigation consistent with the rest of the app.",
+          fr: "Page 404 personnalisee qui garde une navigation coherente avec le reste de l'app.",
+          ar: "صفحة 404 مخصصة تحافظ على تناسق التنقل مع بقية التطبيق.",
         },
       },
     ],

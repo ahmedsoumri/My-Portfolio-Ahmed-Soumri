@@ -21,18 +21,14 @@ export function ThemeToggle() {
       type="button"
       variant="ghost"
       size="icon"
-      className="group relative h-9 w-16 overflow-hidden rounded-full border border-primary/15 bg-background/60 px-1 shadow-sm backdrop-blur transition hover:border-primary/35 hover:bg-primary/10"
+      className="group relative h-9 w-16 shrink-0 rounded-full border border-border bg-muted/70 px-1 shadow-inner transition-colors hover:border-primary/40 hover:bg-muted"
       onClick={() => setTheme(nextTheme)}
       aria-label={`Switch to ${nextTheme} theme`}
       aria-pressed={isDark}
     >
       <span
-        className="absolute inset-1 rounded-full bg-gradient-to-r from-purple-500/15 via-cyan-500/15 to-pink-500/15"
-        aria-hidden="true"
-      />
-      <span
-        className={`relative grid h-7 w-7 place-items-center rounded-full bg-background text-primary shadow-sm transition-transform duration-300 ${
-          isDark ? "translate-x-7" : "translate-x-0"
+        className={`relative grid h-7 w-7 place-items-center rounded-full bg-background text-primary shadow-md ring-1 ring-black/5 transition-transform duration-300 dark:ring-white/10 ${
+          isDark ? "translate-x-4" : "-translate-x-4"
         }`}
         aria-hidden="true"
       >
