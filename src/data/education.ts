@@ -15,11 +15,6 @@ export const educations: Education[] = [
       fr: "En cours",
       ar: "قيد الإنجاز",
     },
-    note: {
-      en: "Part-time program, one day per week.",
-      fr: "Programme a temps partiel, un jour par semaine.",
-      ar: "برنامج بدوام جزئي، يوم واحد في الأسبوع.",
-    },
   },
   {
     id: 2,
@@ -34,11 +29,6 @@ export const educations: Education[] = [
       en: "In progress",
       fr: "En cours",
       ar: "قيد الإنجاز",
-    },
-    note: {
-      en: "Exam-based, part-time program.",
-      fr: "Programme base sur examens, a temps partiel.",
-      ar: "برنامج قائم على الامتحانات وبدوام جزئي.",
     },
   },
   {
