@@ -28,6 +28,15 @@ export interface Experience {
   technologies: string[];
 }
 
+export interface Education {
+  id: number;
+  degree: Translation;
+  institution: string;
+  period: string;
+  status: Translation;
+  note?: Translation;
+}
+
 export interface Certification {
   id: number;
   title: Translation;

@@ -1,6 +1,7 @@
 import { profile } from "./profile";
 import { seo, hero, sectionTitles, contact, buildServices, projectDetailsLabels, footer } from "./sections";
 import { experiences } from "./experience";
+import { educations } from "./education";
 import { projects } from "./projects";
 import { skillGroups } from "./skills";
 import { certifications } from "./certifications";
@@ -10,6 +11,7 @@ export * from "./profile";
 export * from "./navigation";
 export * from "./sections";
 export * from "./experience";
+export * from "./education";
 export * from "./projects";
 export * from "./skills";
 export * from "./certifications";
@@ -25,6 +27,7 @@ export const portfolioData = {
   footer,
   projectDetailsLabels,
   experiences,
+  educations,
   certifications,
   projects,
   skillGroups,

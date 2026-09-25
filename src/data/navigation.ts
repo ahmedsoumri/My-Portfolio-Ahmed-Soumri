@@ -1,9 +1,9 @@
 import type { Language, Translation } from "./types";
 
 export const navigationItems: Record<Language, string[]> = {
-  en: ["Home", "About", "Experience", "Certifications", "Projects", "Contact"],
-  fr: ["Accueil", "A propos", "Experience", "Certifications", "Projets", "Contact"],
-  ar: ["الرئيسية", "نبذة عني", "الخبرات", "الشهادات", "المشاريع", "تواصل"],
+  en: ["Home", "About", "Experience", "Education", "Certifications", "Projects", "Contact"],
+  fr: ["Accueil", "A propos", "Experience", "Formation", "Certifications", "Projets", "Contact"],
+  ar: ["الرئيسية", "نبذة عني", "الخبرات", "التعليم", "الشهادات", "المشاريع", "تواصل"],
 };
 
 export const themeLabels = {

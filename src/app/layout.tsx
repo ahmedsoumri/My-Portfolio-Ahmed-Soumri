@@ -27,11 +27,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: `${siteUrl}/`,
-    languages: {
-      "en-US": "/",
-      "fr-FR": "/",
-      "ar-SA": "/",
-    },
   },
   openGraph: {
     type: "website",
@@ -96,6 +91,7 @@ const jsonLd = {
   knowsAbout: [
     "Full Stack Development",
     "SaaS",
+    "Artificial Intelligence",
     "React",
     "Next.js",
     "Node.js",

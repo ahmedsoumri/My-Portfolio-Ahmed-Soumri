@@ -3,12 +3,13 @@ import type { SEOMetadata, Translation } from "./types";
 export const seo: SEOMetadata = {
   siteUrl: "https://www.ahmedsoumri.com",
   siteName: "Ahmed Soumri | Full Stack Developer",
-  title: "Ahmed Soumri - Full Stack Developer | SaaS, Web, Mobile & Web3",
+  title: "Ahmed Soumri - Full Stack Developer | AI, SaaS, Web, Mobile & Web3",
   description:
-    "Ahmed Soumri is a Full Stack Developer building SaaS platforms, web and mobile apps, dashboards, e-commerce solutions, and Web3 integrations with React, Next.js, Node.js, TypeScript, React Native, Solidity, and Web3.js.",
+    "Ahmed Soumri is a Full Stack Developer building SaaS platforms, AI-powered workflows, web and mobile apps, dashboards, e-commerce solutions, and Web3 integrations with React, Next.js, Node.js, TypeScript, React Native, Solidity, and Web3.js.",
   keywords: [
     "Ahmed Soumri",
     "Full Stack Developer",
+    "AI Developer",
     "SaaS Developer",
     "React Developer",
     "Next.js Developer",
@@ -36,9 +37,9 @@ export const hero = {
     ar: "مرحبا، أنا",
   } satisfies Translation,
   headline: {
-    en: "Full Stack Developer building SaaS, web and mobile apps.",
-    fr: "Developpeur Full Stack qui construit des SaaS, apps web et mobiles.",
-    ar: "مطور Full Stack أبني منصات SaaS وتطبيقات ويب وموبايل.",
+    en: "Full Stack Developer building AI-powered SaaS, web, mobile apps and Web3 integrations.",
+    fr: "Developpeur Full Stack qui construit des SaaS, apps web et mobiles propulses par l'IA, avec integrations Web3.",
+    ar: "مطور Full Stack أبني حلول SaaS وتطبيقات ويب وموبايل مدعومة بالذكاء الاصطناعي، مع تكاملات Web3.",
   } satisfies Translation,
   subtitle: {
     en: "I turn ideas into useful products with React, Next.js, Node.js, React Native and TypeScript, with Web3 integration when smart contracts or blockchain workflows create real value.",
@@ -60,6 +61,7 @@ export const hero = {
 export const sectionTitles = {
   about: { en: "About Me", fr: "A propos", ar: "نبذة عني" } satisfies Translation,
   experience: { en: "Experience", fr: "Experience", ar: "الخبرات" } satisfies Translation,
+  education: { en: "Education", fr: "Formation", ar: "التعليم" } satisfies Translation,
   certifications: { en: "Certifications", fr: "Certifications", ar: "الشهادات" } satisfies Translation,
   projects: { en: "Projects", fr: "Projets", ar: "المشاريع" } satisfies Translation,
   contact: { en: "Get in Touch", fr: "Contactez-moi", ar: "تواصل معي" } satisfies Translation,

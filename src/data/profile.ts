@@ -17,8 +17,8 @@ export const profile = {
     ar: "أبني منتجات رقمية عملية مثل منصات SaaS ولوحات التحكم ومتاجر إلكترونية وتطبيقات موبايل ونسخ MVP للأعمال. ميزتي أنني أستطيع أيضا العمل على العقود الذكية والتوكنة والتتبع وتكامل Web3 عندما يضيف ذلك قيمة حقيقية.",
   } satisfies Translation,
   cv: {
-    en: "/cv/Ahmed_Soumri_CV_EN.docx",
-    fr: "/cv/Ahmed_Soumri_CV_FR.docx",
+    en: "/cv/Ahmed_Soumri_CV_EN.pdf",
+    fr: "/cv/Ahmed_Soumri_CV_FR.pdf",
   },
   links: {
     portfolio: "https://www.ahmedsoumri.com",
