@@ -86,6 +86,19 @@ export const contact = {
     send: { en: "Send Message", fr: "Envoyer", ar: "إرسال الرسالة" } satisfies Translation,
     socials: { en: "Connect on Socials", fr: "Me retrouver en ligne", ar: "تواصل معي عبر المنصات" } satisfies Translation,
   },
+  status: {
+    sending: { en: "Sending...", fr: "Envoi en cours...", ar: "جاري الإرسال..." } satisfies Translation,
+    success: {
+      en: "Message sent! I'll get back to you soon.",
+      fr: "Message envoye ! Je vous repondrai bientot.",
+      ar: "تم إرسال الرسالة! سأرد عليك قريبا.",
+    } satisfies Translation,
+    error: {
+      en: "Something went wrong. Please try again or email me directly.",
+      fr: "Une erreur est survenue. Reessayez ou ecrivez-moi directement par email.",
+      ar: "حدث خطأ ما. أعد المحاولة أو راسلني مباشرة عبر البريد الإلكتروني.",
+    } satisfies Translation,
+  },
 };
 
 export const buildServices = {

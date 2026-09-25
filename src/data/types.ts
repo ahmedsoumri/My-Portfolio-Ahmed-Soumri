@@ -10,7 +10,7 @@ export interface SocialLink {
 
 export interface SkillGroup {
   id: string;
-  icon: "layout" | "server" | "mobile" | "database" | "web3" | "product";
+  icon: "layout" | "server" | "mobile" | "database" | "web3" | "product" | "ai";
   title: Translation;
   description: Translation;
   items: string[];

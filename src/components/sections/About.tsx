@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "@/context/LanguageContext";
 import { portfolioData } from "@/data/portfoliodata";
 import { Card, CardContent } from "@/components/ui/card";
-import { Blocks, Code2, Database, Layout, Server, Smartphone } from "lucide-react";
+import { Blocks, Brain, Code2, Database, Layout, Server, Smartphone } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,6 +43,7 @@ export function About() {
     database: <Database className="h-8 w-8" />,
     web3: <Blocks className="h-8 w-8" />,
     product: <Code2 className="h-8 w-8" />,
+    ai: <Brain className="h-8 w-8" />,
   };
 
   return (

@@ -34,12 +34,12 @@ export function Projects() {
   const publishedLabel = {
     en: "Published",
     fr: "Publie",
-    ar: "Published",
+    ar: "منشور",
   };
   const filterLabels = {
-    all: { en: "All", fr: "Tous", ar: "All" },
-    web: { en: "Web", fr: "Web", ar: "Web" },
-    mobile: { en: "Mobile", fr: "Mobile", ar: "Mobile" },
+    all: { en: "All", fr: "Tous", ar: "الكل" },
+    web: { en: "Web", fr: "Web", ar: "ويب" },
+    mobile: { en: "Mobile", fr: "Mobile", ar: "موبايل" },
   };
   const filters: { id: ProjectFilter; icon: typeof Grid2X2 }[] = [
     { id: "all", icon: Grid2X2 },

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "@/context/LanguageContext";
 import { portfolioData } from "@/data/portfoliodata";
@@ -7,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Send } from "lucide-react";
+import { AlertCircle, CheckCircle2, Send } from "lucide-react";
 
 type FormData = {
   name: string;
@@ -16,14 +17,32 @@ type FormData = {
   message: string;
 };
 
+type SubmitStatus = "idle" | "sending" | "success" | "error";
+
 export function ContactForm() {
   const { language } = useTranslation();
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
-  const { contact, profile, sections } = portfolioData;
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();
+  const { contact, sections } = portfolioData;
+  const [status, setStatus] = useState<SubmitStatus>("idle");
 
-  const onSubmit = (data: FormData) => {
-    const mailto = `mailto:${profile.email}?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`)}`;
-    window.open(mailto, "_self");
+  const onSubmit = async (data: FormData) => {
+    setStatus("sending");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+
+      setStatus("success");
+      reset();
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -69,9 +88,23 @@ export function ContactForm() {
             />
           </div>
 
-          <Button type="submit" className="w-full cursor-pointer">
+          {status === "success" && (
+            <div className="flex items-center gap-2 rounded-md bg-emerald-500/10 px-4 py-3 text-sm text-emerald-600 dark:text-emerald-400">
+              <CheckCircle2 className="h-4 w-4 shrink-0" />
+              <span>{contact.status.success[language]}</span>
+            </div>
+          )}
+
+          {status === "error" && (
+            <div className="flex items-center gap-2 rounded-md bg-destructive/10 px-4 py-3 text-sm text-destructive">
+              <AlertCircle className="h-4 w-4 shrink-0" />
+              <span>{contact.status.error[language]}</span>
+            </div>
+          )}
+
+          <Button type="submit" className="w-full cursor-pointer" disabled={status === "sending"}>
             <Send className={`h-4 w-4 ${language === "ar" ? "ml-2" : "mr-2"}`} />
-            {contact.labels.send[language]}
+            {status === "sending" ? contact.status.sending[language] : contact.labels.send[language]}
           </Button>
         </form>
       </CardContent>

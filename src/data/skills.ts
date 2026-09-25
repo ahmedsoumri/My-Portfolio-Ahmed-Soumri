@@ -46,6 +46,17 @@ export const skillGroups: SkillGroup[] = [
     items: ["MongoDB", "PostgreSQL", "MySQL"],
   },
   {
+    id: "ai",
+    icon: "ai",
+    title: { en: "AI Integration", fr: "Integration IA", ar: "تكامل الذكاء الاصطناعي" },
+    description: {
+      en: "AI-powered features, LLM integration and prompt engineering.",
+      fr: "Fonctionnalites IA, integration LLM et prompt engineering.",
+      ar: "ميزات مدعومة بالذكاء الاصطناعي، تكامل نماذج اللغة، وهندسة الأوامر.",
+    },
+    items: ["OpenAI API", "Gemini API", "Prompt Engineering", "LLM Workflows"],
+  },
+  {
     id: "web3",
     icon: "web3",
     title: { en: "Web3", fr: "Web3", ar: "Web3" },

@@ -22,7 +22,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
   const publishedLabel = {
     en: "Published",
     fr: "Publie",
-    ar: "Published",
+    ar: "منشور",
   };
   const statusLabel = project.liveUrl ? publishedLabel[language] : project.status[language];
   const role =
