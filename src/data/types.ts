@@ -34,6 +34,8 @@ export interface Certification {
   issuer: string;
   date: string;
   category: "ai" | "web3" | "devops" | "data" | "systems" | "typescript";
+  credentialId?: string;
+  previewImage?: string;
   pdfUrl?: string;
 }
 
@@ -56,6 +58,7 @@ export interface Project {
   hidden?: boolean;
   projectType?: "web" | "mobile";
   title: Translation;
+  role?: Translation;
   shortDescription: Translation;
   overview: Translation;
   image?: string;

@@ -1,5 +1,5 @@
 import { profile } from "./profile";
-import { seo, hero, sectionTitles, contact, projectDetailsLabels, footer } from "./sections";
+import { seo, hero, sectionTitles, contact, buildServices, projectDetailsLabels, footer } from "./sections";
 import { experiences } from "./experience";
 import { projects } from "./projects";
 import { skillGroups } from "./skills";
@@ -21,6 +21,7 @@ export const portfolioData = {
   hero,
   sections: sectionTitles,
   contact,
+  buildServices,
   footer,
   projectDetailsLabels,
   experiences,

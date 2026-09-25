@@ -393,64 +393,285 @@ export const projects: Project[] = [
       ar: "أصبح للـ MVP أساس جاهز للإنتاج: خدمات Web وAPI منشورة، مسارات للتاجر والإدارة، عمليات COD مناسبة لتونس، مخططات تحقق مشتركة، وخارطة طريق للدفع والتوصيل والأتمتة.",
     },
     coverImage: {
-      src: "/projects/sity-tn/storefront-landing-concept.png",
+      src: "/projects/sity-tn/sass-landing-page.png",
       alt: {
-        en: "Temporary concept visual for the sity.tn storefront landing page.",
-        fr: "Visuel concept temporaire pour la page d'accueil storefront de sity.tn.",
-        ar: "صورة Concept مؤقتة لواجهة متجر sity.tn.",
+        en: "sity.tn marketing homepage introducing the e-commerce SaaS.",
+        fr: "Page d'accueil marketing de sity.tn presentant le SaaS e-commerce.",
+        ar: "الصفحة التسويقية الرئيسية لمنصة sity.tn.",
       },
     },
     screenshots: [
       {
-        src: "/projects/sity-tn/storefront-landing-concept.png",
+        src: "/projects/sity-tn/sass-landing-page.png",
         alt: {
-          en: "Temporary storefront landing concept for sity.tn.",
-          fr: "Concept temporaire de landing storefront pour sity.tn.",
-          ar: "Concept مؤقت للصفحة الرئيسية لمتجر sity.tn.",
+          en: "sity.tn marketing homepage introducing the e-commerce SaaS.",
+          fr: "Page d'accueil marketing de sity.tn presentant le SaaS e-commerce.",
+          ar: "الصفحة التسويقية الرئيسية لمنصة sity.tn.",
         },
         caption: {
-          en: "Replace this with the real storefront home or live shop screenshot.",
-          fr: "A remplacer par une vraie capture de la page boutique ou d'un shop live.",
-          ar: "استبدلها بصورة حقيقية للمتجر أو Shop منشور.",
+          en: "Marketing homepage pitching the platform to Tunisian merchants.",
+          fr: "Page marketing qui presente la plateforme aux commercants tunisiens.",
+          ar: "الصفحة التسويقية التي تعرض المنصة للتجار في تونس.",
         },
       },
       {
-        src: "/projects/sity-tn/storefront-products-concept.png",
+        src: "/projects/sity-tn/login-page.png",
         alt: {
-          en: "Temporary product catalog concept for sity.tn.",
-          fr: "Concept temporaire du catalogue produits pour sity.tn.",
-          ar: "Concept مؤقت لكتالوج المنتجات في sity.tn.",
+          en: "Merchant login screen for the sity.tn dashboard.",
+          fr: "Ecran de connexion marchand pour le dashboard sity.tn.",
+          ar: "شاشة تسجيل دخول التاجر إلى لوحة sity.tn.",
         },
         caption: {
-          en: "Replace this with the real products/catalog page screenshot.",
-          fr: "A remplacer par une vraie capture de la page produits/catalogue.",
-          ar: "استبدلها بصورة حقيقية لصفحة المنتجات أو الكتالوج.",
+          en: "Merchant login with email/password and Google sign-in.",
+          fr: "Connexion marchand par email/mot de passe ou avec Google.",
+          ar: "تسجيل دخول التاجر عبر البريد وكلمة المرور أو عبر جوجل.",
         },
       },
       {
-        src: "/projects/sity-tn/storefront-checkout-concept.png",
+        src: "/projects/sity-tn/register-page.png",
         alt: {
-          en: "Temporary checkout concept for sity.tn.",
-          fr: "Concept temporaire du checkout pour sity.tn.",
-          ar: "Concept مؤقت لصفحة الدفع في sity.tn.",
+          en: "Merchant sign-up flow to create a new sity.tn store.",
+          fr: "Parcours d'inscription marchand pour creer une boutique sity.tn.",
+          ar: "خطوات إنشاء حساب تاجر جديد في sity.tn.",
         },
         caption: {
-          en: "Replace this with the real cash-on-delivery checkout screenshot.",
-          fr: "A remplacer par une vraie capture du checkout paiement a la livraison.",
-          ar: "استبدلها بصورة حقيقية لصفحة Checkout الدفع عند الاستلام.",
+          en: "Self-serve sign-up to start a free store in minutes.",
+          fr: "Inscription en libre-service pour lancer une boutique gratuite en quelques minutes.",
+          ar: "تسجيل ذاتي لإطلاق متجر مجاني في دقائق.",
         },
       },
       {
-        src: "/projects/sity-tn/storefront-cart-concept.png",
+        src: "/projects/sity-tn/merchant-dashboard.png",
         alt: {
-          en: "Temporary cart concept for sity.tn.",
-          fr: "Concept temporaire du panier pour sity.tn.",
-          ar: "Concept مؤقت لسلة الشراء في sity.tn.",
+          en: "Merchant dashboard with revenue, orders and fulfillment KPIs.",
+          fr: "Dashboard marchand avec revenus, commandes et KPIs de livraison.",
+          ar: "لوحة تحكم التاجر مع الإيرادات والطلبات ومؤشرات التوصيل.",
         },
         caption: {
-          en: "Replace this with the real cart, dashboard, admin or mobile screenshot you want to highlight.",
-          fr: "A remplacer par la vraie capture du panier, dashboard, admin ou mobile a mettre en avant.",
-          ar: "استبدلها بصورة حقيقية للسلة أو لوحة التاجر أو الإدارة أو الهاتف حسب ما تريد إبرازه.",
+          en: "Merchant dashboard: revenue trend, order status and delivery rate at a glance.",
+          fr: "Dashboard marchand : tendance des revenus, statut des commandes et taux de livraison en un coup d'oeil.",
+          ar: "لوحة التاجر: اتجاه الإيرادات وحالة الطلبات ومعدل التوصيل في لمحة واحدة.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/merchant-storebuilder.png",
+        alt: {
+          en: "Storefront builder for shop identity, branding, theme and contact info.",
+          fr: "Storefront Builder pour l'identite, la marque, le theme et les contacts de la boutique.",
+          ar: "أداة بناء المتجر لإعداد الهوية والعلامة والثيم وبيانات التواصل.",
+        },
+        caption: {
+          en: "Step-by-step storefront builder with a live preview of the shop.",
+          fr: "Storefront Builder guide etape par etape avec un apercu live de la boutique.",
+          ar: "أداة بناء المتجر خطوة بخطوة مع معاينة مباشرة للمتجر.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/merchant-product-managemnt.png",
+        alt: {
+          en: "Product catalog management with stock, pricing and visibility controls.",
+          fr: "Gestion du catalogue produits avec stock, prix et visibilite.",
+          ar: "إدارة كتالوج المنتجات مع المخزون والأسعار والظهور.",
+        },
+        caption: {
+          en: "Product management: pricing, stock, status and featured toggles.",
+          fr: "Gestion des produits : prix, stock, statut et mise en avant.",
+          ar: "إدارة المنتجات: الأسعار والمخزون والحالة والتمييز.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/merchant-categorie-management.png",
+        alt: {
+          en: "Category management for organizing the storefront catalog.",
+          fr: "Gestion des categories pour organiser le catalogue storefront.",
+          ar: "إدارة الفئات لتنظيم كتالوج المتجر.",
+        },
+        caption: {
+          en: "Category management to keep the storefront catalog easy to browse.",
+          fr: "Gestion des categories pour garder un catalogue storefront facile a parcourir.",
+          ar: "إدارة الفئات لتسهيل تصفح كتالوج المتجر.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/merchant-order-managament.png",
+        alt: {
+          en: "Cash-on-delivery order queue with confirm and cancel actions.",
+          fr: "File de commandes paiement a la livraison avec actions confirmer/annuler.",
+          ar: "قائمة طلبات الدفع عند الاستلام مع إجراءات التأكيد والإلغاء.",
+        },
+        caption: {
+          en: "COD order operations: confirm, cancel, call and export from one queue.",
+          fr: "Operations COD : confirmer, annuler, appeler et exporter depuis une seule file.",
+          ar: "عمليات الدفع عند الاستلام: تأكيد وإلغاء واتصال وتصدير من قائمة واحدة.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/merchant-subscription-plan.png",
+        alt: {
+          en: "Merchant subscription page with current plan and usage limits.",
+          fr: "Page d'abonnement marchand avec plan actuel et limites d'utilisation.",
+          ar: "صفحة اشتراك التاجر مع الخطة الحالية وحدود الاستخدام.",
+        },
+        caption: {
+          en: "Subscription and plan usage tracking for the merchant's shop.",
+          fr: "Suivi de l'abonnement et de l'utilisation du plan pour la boutique.",
+          ar: "متابعة الاشتراك واستخدام الخطة الخاصة بمتجر التاجر.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/merchant-team-management.png",
+        alt: {
+          en: "Team management page for inviting staff and managers with roles.",
+          fr: "Page de gestion d'equipe pour inviter du personnel avec des roles.",
+          ar: "صفحة إدارة الفريق لدعوة الموظفين وتحديد الأدوار.",
+        },
+        caption: {
+          en: "Team management with role-based access for staff and managers.",
+          fr: "Gestion d'equipe avec acces base sur les roles pour le personnel.",
+          ar: "إدارة الفريق مع صلاحيات حسب الدور لكل موظف.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/storefront-landingpage.png",
+        alt: {
+          en: "Live public storefront homepage for a merchant shop on sity.tn.",
+          fr: "Page d'accueil publique en live d'une boutique marchande sur sity.tn.",
+          ar: "الصفحة الرئيسية العامة المباشرة لمتجر تاجر على sity.tn.",
+        },
+        caption: {
+          en: "Public storefront homepage generated for a live merchant shop.",
+          fr: "Page d'accueil storefront publique generee pour une boutique marchande live.",
+          ar: "الصفحة الرئيسية العامة التي تُنشأ لمتجر تاجر مباشر.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/storefront-all-products.png",
+        alt: {
+          en: "Storefront catalog page with category filters and product grid.",
+          fr: "Page catalogue storefront avec filtres par categorie et grille produits.",
+          ar: "صفحة كتالوج المتجر مع فلاتر الفئات وشبكة المنتجات.",
+        },
+        caption: {
+          en: "Storefront catalog with category filters, sorting and quick order.",
+          fr: "Catalogue storefront avec filtres par categorie, tri et commande rapide.",
+          ar: "كتالوج المتجر مع فلاتر الفئات والفرز والطلب السريع.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/storefront-product-details.png",
+        alt: {
+          en: "Storefront product detail page with variants and stock status.",
+          fr: "Page produit storefront avec variantes et statut de stock.",
+          ar: "صفحة تفاصيل المنتج مع المتغيرات وحالة المخزون.",
+        },
+        caption: {
+          en: "Product detail page with variant selection and stock availability.",
+          fr: "Page produit avec selection de variantes et disponibilite du stock.",
+          ar: "صفحة تفاصيل المنتج مع اختيار المتغيرات وتوفر المخزون.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/storefront-checkout.png",
+        alt: {
+          en: "Cash-on-delivery checkout with contact and delivery address form.",
+          fr: "Checkout paiement a la livraison avec formulaire contact et adresse.",
+          ar: "صفحة الدفع عند الاستلام مع نموذج التواصل وعنوان التوصيل.",
+        },
+        caption: {
+          en: "Cash-on-delivery checkout with order summary and upsell add-on.",
+          fr: "Checkout COD avec resume de commande et produit complementaire.",
+          ar: "صفحة الدفع عند الاستلام مع ملخص الطلب ومنتج إضافي مقترح.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/storefront-track-order.png",
+        alt: {
+          en: "Order tracking page showing status timeline for a customer order.",
+          fr: "Page de suivi de commande avec la timeline de statut.",
+          ar: "صفحة تتبع الطلب مع مخطط زمني لحالة الطلب.",
+        },
+        caption: {
+          en: "Customer order tracking by reference and phone, with status timeline.",
+          fr: "Suivi de commande client par reference et telephone, avec timeline de statut.",
+          ar: "تتبع طلب العميل عبر الرقم المرجعي والهاتف مع مخطط زمني للحالة.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/admin-dashboard.png",
+        alt: {
+          en: "Platform admin overview with shop health and attention queue.",
+          fr: "Vue d'ensemble admin plateforme avec sante des boutiques et file d'attention.",
+          ar: "نظرة عامة للإدارة مع صحة المتاجر وقائمة الأولويات.",
+        },
+        caption: {
+          en: "Admin overview: shop health, pending payments, trials and COD volume.",
+          fr: "Vue admin : sante des boutiques, paiements en attente, essais et volume COD.",
+          ar: "نظرة الإدارة: صحة المتاجر والمدفوعات المعلقة والتجارب وحجم طلبات COD.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/admin-shop-managemnt.png",
+        alt: {
+          en: "Admin shops list with owner, commerce activity and status controls.",
+          fr: "Liste admin des boutiques avec proprietaire, activite et statut.",
+          ar: "قائمة إدارة المتاجر مع المالك والنشاط التجاري والحالة.",
+        },
+        caption: {
+          en: "Admin shop directory with ownership, activity and status controls.",
+          fr: "Repertoire admin des boutiques avec propriete, activite et controle de statut.",
+          ar: "دليل إدارة المتاجر مع الملكية والنشاط والتحكم في الحالة.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/admin-user-managemnt.png",
+        alt: {
+          en: "Admin user management with verification and activation controls.",
+          fr: "Gestion admin des utilisateurs avec verification et activation.",
+          ar: "إدارة المستخدمين من لوحة الإدارة مع التحقق والتفعيل.",
+        },
+        caption: {
+          en: "Platform-wide user management with roles, plans and activation status.",
+          fr: "Gestion des utilisateurs sur toute la plateforme avec roles, plans et statut.",
+          ar: "إدارة المستخدمين على مستوى المنصة مع الأدوار والخطط وحالة التفعيل.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/admin-plan-managemnt.png",
+        alt: {
+          en: "Admin plan catalog with pricing, trial windows and feature counts.",
+          fr: "Catalogue admin des plans avec prix, periode d'essai et fonctionnalites.",
+          ar: "كتالوج إدارة الخطط مع الأسعار وفترة التجربة وعدد الميزات.",
+        },
+        caption: {
+          en: "Plan catalog controlling pricing, trials and feature limits per tier.",
+          fr: "Catalogue des plans qui pilote prix, essais et limites de fonctionnalites.",
+          ar: "كتالوج الخطط الذي يتحكم في الأسعار والتجارب وحدود الميزات لكل باقة.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/admin-global-feature-flag.png",
+        alt: {
+          en: "Global platform controls for maintenance mode and feature flags.",
+          fr: "Controles globaux plateforme pour le mode maintenance et les feature flags.",
+          ar: "أدوات التحكم العامة للمنصة لوضع الصيانة وميزات التفعيل.",
+        },
+        caption: {
+          en: "Platform-wide switches: maintenance mode, registration and shop creation.",
+          fr: "Interrupteurs globaux : mode maintenance, inscriptions et creation de boutiques.",
+          ar: "مفاتيح تحكم عامة: وضع الصيانة والتسجيل وإنشاء المتاجر.",
+        },
+      },
+      {
+        src: "/projects/sity-tn/admin-auditlogs.png",
+        alt: {
+          en: "Admin audit log listing platform actions with actor and target.",
+          fr: "Journal d'audit admin listant les actions plateforme avec acteur et cible.",
+          ar: "سجل تدقيق الإدارة يعرض إجراءات المنصة مع الفاعل والهدف.",
+        },
+        caption: {
+          en: "Audit log tracking every admin action with actor, target and timestamp.",
+          fr: "Journal d'audit qui trace chaque action admin avec acteur, cible et horodatage.",
+          ar: "سجل تدقيق يوثق كل إجراء إداري مع الفاعل والهدف والتوقيت.",
         },
       },
     ],

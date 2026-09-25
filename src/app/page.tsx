@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
+import { BuildServices } from "@/components/sections/BuildServices";
 import { Experience } from "@/components/sections/Experience";
 import { Certifications } from "@/components/sections/Certifications";
 import { Projects } from "@/components/sections/Projects";
@@ -12,6 +13,7 @@ export default function Home() {
     <div className="flex flex-col gap-0 w-full overflow-x-hidden">
       <Hero />
       <About />
+      <BuildServices />
       <Experience />
       <Certifications />
       <Projects />

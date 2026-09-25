@@ -66,6 +66,11 @@ export const sectionTitles = {
 };
 
 export const contact = {
+  cta: {
+    en: "Available for Full Stack roles, SaaS MVPs, and freelance product builds.",
+    fr: "Disponible pour des postes Full Stack, des MVP SaaS et des projets freelance.",
+    ar: "متاح لأدوار Full Stack، وبناء MVP SaaS، ومشاريع المنتجات الحرة.",
+  } satisfies Translation,
   intro: {
     en: "Have a project, freelance mission, SaaS idea, or strong opportunity? Send me a message and I will get back to you.",
     fr: "Vous avez un projet, une mission freelance, une idee SaaS ou une opportunite interessante ? Envoyez-moi un message et je vous repondrai.",
@@ -81,9 +86,55 @@ export const contact = {
   },
 };
 
+export const buildServices = {
+  title: {
+    en: "What I can build for you",
+    fr: "Ce que je peux construire pour vous",
+    ar: "ما يمكنني بناؤه لك",
+  } satisfies Translation,
+  intro: {
+    en: "Focused product builds for teams, founders, and businesses that need useful software shipped with care.",
+    fr: "Des produits digitaux utiles pour les equipes, fondateurs et entreprises qui veulent livrer vite et proprement.",
+    ar: "بناء منتجات رقمية مفيدة للفرق والمؤسسين والشركات التي تحتاج إلى حلول عملية بجودة عالية.",
+  } satisfies Translation,
+  items: [
+    {
+      icon: "rocket",
+      title: { en: "SaaS MVPs", fr: "MVP SaaS", ar: "MVP SaaS" } satisfies Translation,
+    },
+    {
+      icon: "dashboard",
+      title: { en: "Dashboards", fr: "Tableaux de bord", ar: "لوحات تحكم" } satisfies Translation,
+    },
+    {
+      icon: "ecommerce",
+      title: { en: "E-commerce", fr: "E-commerce", ar: "تجارة إلكترونية" } satisfies Translation,
+    },
+    {
+      icon: "mobile",
+      title: { en: "Mobile apps", fr: "Applications mobiles", ar: "تطبيقات موبايل" } satisfies Translation,
+    },
+    {
+      icon: "ai",
+      title: { en: "AI workflows", fr: "Workflows IA", ar: "سير عمل بالذكاء الاصطناعي" } satisfies Translation,
+    },
+    {
+      icon: "automation",
+      title: { en: "Automation tools", fr: "Outils d'automatisation", ar: "أدوات أتمتة" } satisfies Translation,
+    },
+  ],
+};
+
 export const projectDetailsLabels = {
   back: { en: "Back to Projects", fr: "Retour aux projets", ar: "العودة إلى المشاريع" } satisfies Translation,
   overview: { en: "Overview", fr: "Apercu", ar: "نظرة عامة" } satisfies Translation,
+  role: { en: "Role", fr: "Role", ar: "الدور" } satisfies Translation,
+  stack: { en: "Stack", fr: "Stack", ar: "التقنيات" } satisfies Translation,
+  problem: { en: "Problem", fr: "Probleme", ar: "المشكلة" } satisfies Translation,
+  solution: { en: "Solution", fr: "Solution", ar: "الحل" } satisfies Translation,
+  result: { en: "Result", fr: "Resultat", ar: "النتيجة" } satisfies Translation,
+  defaultWebRole: { en: "Full Stack Developer", fr: "Developpeur Full Stack", ar: "مطور Full Stack" } satisfies Translation,
+  defaultMobileRole: { en: "Mobile & Backend Developer", fr: "Developpeur mobile et backend", ar: "مطور موبايل وباكند" } satisfies Translation,
   features: { en: "Key Features", fr: "Fonctionnalites cles", ar: "الميزات الأساسية" } satisfies Translation,
   challenge: { en: "Challenge", fr: "Defi", ar: "التحدي" } satisfies Translation,
   outcome: { en: "Outcome", fr: "Resultat", ar: "النتيجة" } satisfies Translation,

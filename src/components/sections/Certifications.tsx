@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -81,13 +82,30 @@ export function Certifications() {
           <h2 className="text-3xl font-bold">{sections.certifications[language]}</h2>
         </div>
 
-        <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-5xl items-start gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {certifications.map((certification) => (
             <Card
               key={certification.id}
               className="certification-card border-primary/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <CardContent className="flex h-full flex-col gap-4 p-5">
+              <CardContent className="flex flex-col gap-4 p-5">
+                {certification.previewImage && (
+                  <button
+                    type="button"
+                    className="relative aspect-[16/9] overflow-hidden rounded-lg border bg-muted text-left shadow-sm transition hover:opacity-90"
+                    onClick={() => certification.pdfUrl && setPreviewCertificate(certification)}
+                    aria-label={`Preview ${certification.title[language]}`}
+                  >
+                    <Image
+                      src={certification.previewImage}
+                      alt={`${certification.title[language]} certificate preview`}
+                      fill
+                      sizes="(min-width: 1024px) 320px, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover"
+                    />
+                  </button>
+                )}
+
                 <div className="flex items-start justify-between gap-4">
                   <div className="rounded-xl bg-primary/10 p-3 text-primary">
                     {categoryIcons[certification.category]}
@@ -100,10 +118,15 @@ export function Certifications() {
                 <div className="space-y-2">
                   <h3 className="font-semibold leading-snug">{certification.title[language]}</h3>
                   <p className="text-sm text-muted-foreground">{certification.issuer}</p>
+                  {certification.credentialId && (
+                    <p className="break-all text-xs text-muted-foreground">
+                      Credential ID {certification.credentialId}
+                    </p>
+                  )}
                 </div>
 
                 {certification.pdfUrl && (
-                  <div className="mt-auto flex flex-wrap gap-2 pt-2">
+                  <div className="flex flex-wrap gap-2 pt-2">
                     <Button
                       type="button"
                       variant="secondary"

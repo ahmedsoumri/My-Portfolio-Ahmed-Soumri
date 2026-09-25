@@ -13,6 +13,10 @@ export const certifications: Certification[] = [
     issuer: "The Hashgraph Association",
     date: "Aug 2024",
     category: "web3",
+    credentialId: "ff6e9805-96c3-4f5f-9b53-e2658cf40607",
+    previewImage: "/certificates/hashgraph-developer-course-preview.png",
+    pdfUrl:
+      "/certificates/DeveloperCertificate_Attendance.pdf%20-%20ff6e9805-96c3-4f5f-9b53-e2658cf40607.pdf",
   },
   {
     id: 2,

@@ -30,6 +30,7 @@ export function ContactForm() {
     <Card className="max-w-xl mx-auto backdrop-blur-sm bg-card/50">
       <CardHeader>
         <CardTitle className="text-2xl text-center">{sections.contact[language]}</CardTitle>
+        <p className="text-center text-base font-medium text-primary">{contact.cta[language]}</p>
         <p className="text-center text-sm text-muted-foreground">{contact.intro[language]}</p>
       </CardHeader>
       <CardContent>
